@@ -1,0 +1,952 @@
+/* Live View presentation layer. Imported last so it can refine the upstream
+   interface without changing its DOM/state contracts. */
+:root {
+  --bg-dark: #07131c;
+  --glass-bg: rgba(9, 27, 39, 0.84);
+  --glass-border: rgba(171, 205, 211, 0.18);
+  --glass-border-hover: rgba(239, 163, 92, 0.5);
+  --accent: #efa35c;
+  --accent-dim: rgba(239, 163, 92, 0.14);
+  --accent-glow: rgba(239, 163, 92, 0.2);
+  --text-primary: #f2f7f5;
+  --text-secondary: rgba(202, 220, 222, 0.72);
+  --text-dim: rgba(171, 194, 199, 0.48);
+  --font-sans: 'Outfit', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Mono', monospace;
+  --panel-radius: 14px;
+  --btn-radius: 9px;
+  --transition-fast: 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-smooth: 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --live-view-surface: rgba(10, 31, 43, 0.88);
+  --live-view-surface-raised: rgba(18, 48, 61, 0.9);
+  --live-view-line: rgba(171, 205, 211, 0.18);
+  --live-view-live: #62c99b;
+  --live-view-info: #6ca9dc;
+  --live-view-warning: #e5b55f;
+  --live-view-critical: #e47868;
+  --live-view-analysis: #9f91d3;
+}
+
+html,
+body {
+  background: #07131c;
+  font-family: var(--font-sans);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  opacity: 0.13;
+  background-image:
+    linear-gradient(rgba(170, 211, 216, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(170, 211, 216, 0.025) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at center, transparent 30%, #000 100%);
+  pointer-events: none;
+}
+
+:where(button, input, select, textarea) {
+  font-family: var(--font-sans);
+}
+
+:where(button, a[href], input, select, textarea):focus-visible {
+  outline-color: var(--accent) !important;
+  outline-offset: 3px;
+}
+
+#title-bar {
+  top: 26px;
+  left: 30px;
+  padding: 10px 14px 10px 10px;
+  border: 1px solid var(--live-view-line);
+  border-radius: 15px;
+  background: linear-gradient(120deg, rgba(7, 24, 34, 0.92), rgba(14, 39, 50, 0.74));
+  box-shadow: 0 14px 38px rgba(0, 12, 20, 0.38), inset 0 1px rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px) saturate(1.15);
+}
+
+#title-bar .title-glow {
+  display: none;
+}
+
+#title-bar h1 {
+  gap: 10px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  text-shadow: none;
+}
+
+#title-bar .title-logo {
+  width: 42px;
+  filter: sepia(0.28) saturate(0.8) hue-rotate(326deg) drop-shadow(0 5px 12px rgba(0, 12, 20, 0.45));
+}
+
+#title-bar .title-accent,
+.loader-content .title-accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+#title-bar .subtitle {
+  margin: 3px 0 0 52px;
+  color: var(--text-secondary);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+}
+
+#style-indicator {
+  top: 28px;
+  right: 30px;
+  padding: 9px 12px;
+  border: 1px solid var(--live-view-line);
+  border-radius: 12px;
+  background: rgba(8, 27, 39, 0.82);
+  box-shadow: 0 12px 32px rgba(0, 12, 20, 0.34);
+  backdrop-filter: blur(12px);
+}
+
+#style-indicator .indicator-label {
+  color: var(--text-dim);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+}
+
+#style-indicator .indicator-value {
+  margin-top: 3px;
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-shadow: none;
+  transition: color var(--transition-fast), opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+#top-center-actions {
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--live-view-line);
+  border-radius: 12px;
+  background: rgba(8, 27, 39, 0.84);
+  box-shadow: 0 12px 32px rgba(0, 12, 20, 0.34);
+  backdrop-filter: blur(12px);
+}
+
+#top-center-actions button {
+  border-color: transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  box-shadow: none;
+  transition: transform var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
+}
+
+#top-center-actions button:hover:not(:disabled) {
+  color: #fff5ec;
+  background: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+#top-center-actions button:active:not(:disabled) {
+  transform: translateY(1px) scale(0.975);
+}
+
+:is(
+  .panel-inner,
+  .location-inner,
+  .data-panel-inner,
+  .global-context-panel-inner,
+  .cctv-panel-inner,
+  .radio-panel-inner,
+  .scene-panel-inner,
+  #param-slider-panel,
+  #gev-voice-control .gev-voice-help-tray
+) {
+  border-color: var(--live-view-line);
+  background: linear-gradient(145deg, rgba(15, 42, 55, 0.94), rgba(7, 25, 36, 0.91));
+  box-shadow: 0 18px 44px rgba(0, 12, 20, 0.44), inset 0 1px rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(14px) saturate(1.08);
+}
+
+.panel-title,
+.location-toolbar-label {
+  color: var(--text-secondary);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.panel-divider {
+  background: linear-gradient(to right, rgba(239, 163, 92, 0.38), transparent);
+}
+
+:is(
+  .panel-collapse-btn,
+  .style-btn,
+  .pp-toggle-btn,
+  .location-pill,
+  .poi-pill,
+  .search-toggle-btn,
+  .panel-layer-toggle,
+  .context-mode-button,
+  .scene-btn,
+  .scene-shot-btn,
+  .dock-tray-toggle,
+  .radio-transport button
+) {
+  transition:
+    transform var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+:is(
+  .panel-collapse-btn,
+  .style-btn,
+  .pp-toggle-btn,
+  .location-pill,
+  .poi-pill,
+  .search-toggle-btn,
+  .panel-layer-toggle,
+  .context-mode-button,
+  .scene-btn,
+  .scene-shot-btn,
+  .dock-tray-toggle,
+  .radio-transport button
+):hover:not(:disabled) {
+  border-color: rgba(239, 163, 92, 0.48);
+  color: #fff4e9;
+  background-color: rgba(239, 163, 92, 0.1);
+  transform: translate3d(0, -1px, 0);
+}
+
+:is(
+  .panel-collapse-btn,
+  .style-btn,
+  .pp-toggle-btn,
+  .location-pill,
+  .poi-pill,
+  .search-toggle-btn,
+  .panel-layer-toggle,
+  .context-mode-button,
+  .scene-btn,
+  .scene-shot-btn,
+  .dock-tray-toggle,
+  .radio-transport button
+):active:not(:disabled) {
+  transform: translate3d(0, 1px, 0) scale(0.975);
+}
+
+:is(.style-btn.active, .pp-toggle-btn.active, .context-mode-button[aria-selected='true'], .panel-layer-toggle[aria-pressed='true']) {
+  color: #fff4e9;
+  border-color: rgba(239, 163, 92, 0.58);
+  background: rgba(239, 163, 92, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(239, 163, 92, 0.1);
+}
+
+#command-dock > #location-bar,
+#command-dock > #control-panel,
+#command-dock > #gev-voice-control {
+  border-color: var(--live-view-line);
+  background: rgba(8, 29, 41, 0.92);
+  box-shadow: 0 16px 40px rgba(0, 12, 20, 0.42), inset 0 1px rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px) saturate(1.08);
+}
+
+#command-dock .dock-popover-content {
+  border-color: var(--live-view-line);
+  background: linear-gradient(150deg, rgba(17, 46, 59, 0.97), rgba(7, 25, 36, 0.96));
+  box-shadow: 0 22px 55px rgba(0, 12, 20, 0.52), inset 0 1px rgba(255, 255, 255, 0.05);
+  transition:
+    opacity 190ms ease,
+    visibility 0s linear 190ms,
+    transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#command-dock #location-bar:not(.collapsed) .dock-popover-content,
+#command-dock #control-panel:not(.collapsed) .dock-popover-content {
+  transition-delay: 0s;
+}
+
+#command-dock #gev-voice-button {
+  border-color: rgba(239, 163, 92, 0.3);
+  color: var(--accent);
+  background: rgba(239, 163, 92, 0.08);
+}
+
+#command-dock #gev-voice-button:hover {
+  border-color: rgba(239, 163, 92, 0.58);
+  color: #fff6ef;
+  background: rgba(239, 163, 92, 0.15);
+  box-shadow: none;
+}
+
+#first-run-launcher {
+  width: min(46rem, calc(100vw - 2rem));
+  padding: 1.5rem;
+  border-color: rgba(239, 163, 92, 0.35);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 92% 5%, rgba(239, 163, 92, 0.12), transparent 28%),
+    linear-gradient(145deg, rgba(14, 42, 54, 0.98), rgba(6, 22, 32, 0.98));
+  box-shadow: 0 28px 80px rgba(0, 10, 18, 0.62), inset 0 1px rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(18px) saturate(1.08);
+  transform: translate(-50%, calc(-50% + 14px)) scale(0.98);
+  transition: opacity 220ms ease, transform 340ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#first-run-launcher.visible {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.first-run-scanline {
+  height: 3px;
+  background: linear-gradient(90deg, transparent 3%, var(--accent) 44%, #f5cf91 65%, transparent 97%);
+  box-shadow: none;
+  transform-origin: left;
+  animation: live-view-sweep 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.first-run-kicker {
+  color: var(--accent);
+}
+
+#first-run-launcher h2 {
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+#first-run-description {
+  max-width: 54ch;
+  margin-top: 0.45rem;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.first-run-choices {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.first-run-choices button {
+  grid-template-columns: 2.4rem 1fr 1.3rem;
+  min-height: 5.2rem;
+  padding: 0.85rem;
+  border-color: var(--live-view-line);
+  border-radius: 12px;
+  background: rgba(19, 49, 62, 0.66);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.025);
+  opacity: 0;
+  animation: live-view-choice-in 420ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.first-run-choices button:nth-child(2) { animation-delay: 45ms; }
+.first-run-choices button:nth-child(3) { animation-delay: 90ms; }
+.first-run-choices button:nth-child(4) { animation-delay: 135ms; }
+
+.first-run-choices button:hover,
+.first-run-choices button:focus-visible {
+  border-color: rgba(239, 163, 92, 0.55);
+  background: rgba(239, 163, 92, 0.11);
+  box-shadow: inset 3px 0 var(--accent);
+  transform: translate3d(0, -2px, 0);
+}
+
+.first-run-choices button:active {
+  transform: translate3d(0, 1px, 0) scale(0.985);
+}
+
+.first-run-choices button > .material-symbols-outlined:first-child {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 10px;
+  color: var(--accent);
+  background: rgba(239, 163, 92, 0.1);
+}
+
+.first-run-choices button[data-first-run-choice='environmental'] > .material-symbols-outlined:first-child {
+  color: var(--live-view-critical);
+  background: rgba(228, 120, 104, 0.12);
+}
+
+.first-run-choices button[data-first-run-choice='space-missions'] > .material-symbols-outlined:first-child {
+  color: var(--live-view-analysis);
+  background: rgba(159, 145, 211, 0.12);
+}
+
+.first-run-choices button[data-first-run-choice='contacts'] > .material-symbols-outlined:first-child {
+  color: var(--live-view-info);
+  background: rgba(108, 169, 220, 0.12);
+}
+
+.first-run-choices strong {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 650;
+  letter-spacing: 0.035em;
+}
+
+.first-run-choices small {
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.first-run-arrow {
+  color: var(--accent);
+}
+
+#loading-screen {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(239, 163, 92, 0.1), transparent 22%),
+    radial-gradient(circle at 50% 50%, #102b37, #07131c 68%);
+}
+
+.loader-content {
+  padding: 2rem 2.4rem;
+  border: 1px solid var(--live-view-line);
+  border-radius: 18px;
+  background: rgba(8, 28, 39, 0.76);
+  box-shadow: 0 25px 70px rgba(0, 10, 18, 0.55), inset 0 1px rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+}
+
+.loader-content h2 {
+  font-family: var(--font-sans);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+}
+
+.loader-content .loader-logo {
+  filter: sepia(0.28) saturate(0.8) hue-rotate(326deg);
+  animation: live-view-orbit 2.4s ease-in-out infinite;
+}
+
+.loader-status {
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.panel-collapsible:not(.collapsed) :is(
+  .data-toggle-list,
+  .cctv-controls,
+  .scene-controls,
+  .scene-shot-list,
+  .global-context-mode-tabs,
+  .context-mode-view:not([hidden]),
+  .radio-controls
+) {
+  animation: live-view-panel-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+#global-loading-status:not([hidden]),
+#traffic-sync-chip:not([hidden]),
+#cctv-sync-chip:not([hidden]) {
+  border-color: rgba(239, 163, 92, 0.35);
+  background: rgba(9, 30, 42, 0.92);
+  box-shadow: 0 12px 32px rgba(0, 12, 20, 0.34);
+}
+
+@keyframes live-view-panel-in {
+  from { opacity: 0; transform: translate3d(0, 8px, 0) scale(0.99); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes live-view-choice-in {
+  from { opacity: 0; transform: translate3d(0, 12px, 0) scale(0.985); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes live-view-sweep {
+  from { opacity: 0; transform: scaleX(0.12); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+
+@keyframes live-view-orbit {
+  0%, 100% { opacity: 0.82; transform: translate3d(0, 0, 0) scale(0.98); }
+  50% { opacity: 1; transform: translate3d(0, -4px, 0) scale(1.02); }
+}
+
+@media (max-width: 720px) {
+  #title-bar {
+    top: 12px;
+    left: 12px;
+    padding: 7px 10px 7px 7px;
+  }
+
+  #title-bar h1 { font-size: 16px; }
+  #title-bar .title-logo { width: 32px; }
+  #title-bar .subtitle { margin-left: 42px; font-size: 7px; }
+  #style-indicator { top: 12px; right: 12px; }
+  #first-run-launcher {
+    max-height: calc(100dvh - 7rem);
+    padding: 1rem;
+    border-radius: 14px;
+  }
+  .first-run-choices { grid-template-columns: 1fr; }
+  .first-run-choices button { min-height: 3.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .first-run-scanline,
+  .first-run-choices button,
+  .loader-content .loader-logo,
+  .panel-collapsible:not(.collapsed) :is(
+    .data-toggle-list,
+    .cctv-controls,
+    .scene-controls,
+    .scene-shot-list,
+    .global-context-mode-tabs,
+    .context-mode-view:not([hidden]),
+    .radio-controls
+  ) {
+    animation: none !important;
+  }
+
+  .first-run-choices button {
+    opacity: 1;
+    transform: none;
+  }
+
+  #first-run-launcher,
+  #command-dock .dock-popover-content,
+  :where(button, a, input, select, textarea) {
+    transition: none !important;
+  }
+}
+
+/* ── City Navigation HUD ──────────────────────── */
+#loading-screen.hidden {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.city-nav-hud {
+  position: fixed;
+  top: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(11, 29, 58, 0.85);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 20px;
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+.city-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 12px;
+  color: #bdefff;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  white-space: nowrap;
+}
+
+.city-nav-btn:hover {
+  background: rgba(0, 240, 255, 0.25);
+  border-color: #00f0ff;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+}
+
+.city-nav-btn:active,
+.city-nav-btn.active {
+  background: rgba(0, 240, 255, 0.45);
+  border-color: #00f0ff;
+  color: #ffffff;
+  transform: translateY(0);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.6);
+}
+
+body.ui-clean-view .city-nav-hud,
+body.recording-mode .city-nav-hud,
+body.cockpit-mode .city-nav-hud {
+  display: none !important;
+}
+
+/* ── Live View Declutter & Scope Mask Removal ─────────────────── */
+#scope-mask,
+canvas#scope-mask {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Remove dark radial vignetting overlay from body */
+body::after {
+  display: none !important;
+}
+
+/* Hide military telemetry corner overlays that clutter the screen */
+.hud-corner,
+.hud-edge,
+.hud-bottom-bar,
+#safe-frame-overlay,
+#style-indicator,
+#top-center-actions {
+  display: none !important;
+}
+
+/* Hide redundant multi-button panels on sides and bottom */
+#pp-toggles,
+#scene-panel,
+#global-context-panel,
+#data-panel,
+#param-slider-panel,
+#command-dock {
+  display: none !important;
+}
+
+/* Style the top City Nav Bar with a glowing CCTV button */
+.city-nav-hud {
+  position: fixed !important;
+  top: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 200 !important;
+  display: flex !important;
+  gap: 10px !important;
+  padding: 8px 16px !important;
+  background: rgba(10, 25, 42, 0.92) !important;
+  border: 1px solid rgba(0, 240, 255, 0.4) !important;
+  border-radius: 24px !important;
+  backdrop-filter: blur(24px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.4) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 240, 255, 0.15) !important;
+}
+
+.city-nav-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 14px !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(0, 240, 255, 0.25) !important;
+  border-radius: 12px !important;
+  color: #cffafe !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  outline: none !important;
+  white-space: nowrap !important;
+}
+
+.city-nav-btn:hover {
+  background: rgba(0, 240, 255, 0.25) !important;
+  border-color: #00f0ff !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.4) !important;
+}
+
+.city-nav-btn:active,
+.city-nav-btn.active {
+  background: rgba(0, 240, 255, 0.45) !important;
+  border-color: #00f0ff !important;
+  color: #ffffff !important;
+  transform: translateY(0) !important;
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.6) !important;
+}
+
+/* Glowing live CCTV button in the top navigation */
+.city-nav-cctv-btn {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.4), rgba(220, 38, 38, 0.7)) !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.5) !important;
+  animation: cctv-pulse-glow 2s infinite ease-in-out;
+}
+
+.city-nav-cctv-btn:hover {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.6), rgba(220, 38, 38, 0.9)) !important;
+  border-color: #f87171 !important;
+  box-shadow: 0 0 22px rgba(239, 68, 68, 0.85) !important;
+}
+
+@keyframes cctv-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(239, 68, 68, 0.85), 0 0 35px rgba(239, 68, 68, 0.35);
+  }
+}
+
+/* ── Streamlined CCTV Panel ─────────────────── */
+#cctv-panel {
+  position: fixed !important;
+  top: 80px !important;
+  right: 24px !important;
+  left: auto !important;
+  width: 420px !important;
+  max-width: calc(100vw - 32px) !important;
+  max-height: calc(100vh - 100px) !important;
+  z-index: 250 !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease !important;
+}
+
+#cctv-panel.collapsed {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#cctv-panel:not(.collapsed) {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.cctv-panel-inner {
+  padding: 16px !important;
+  gap: 12px !important;
+  background: rgba(8, 22, 34, 0.95) !important;
+  border: 1px solid rgba(0, 240, 255, 0.4) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 240, 255, 0.15) !important;
+  border-radius: 18px !important;
+  backdrop-filter: blur(28px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(1.4) !important;
+}
+
+/* Hide calibration and confusing technical buttons */
+.cctv-calibration-block,
+#cctv-projection-btn,
+#cctv-quality-chip,
+#cctv-coverage-btn,
+#cctv-auto-hop-btn,
+#cctv-nearest-btn,
+#cctv-focus-btn {
+  display: none !important;
+}
+
+#cctv-panel .panel-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2) !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 4px !important;
+}
+
+#cctv-panel .panel-title {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.5px !important;
+  color: #00f0ff !important;
+  text-transform: uppercase !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+#cctv-panel .panel-title::before {
+  content: '📹';
+  font-size: 14px;
+}
+
+#cctv-panel .panel-collapse-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+#cctv-panel .panel-collapse-btn:hover {
+  background: rgba(239, 68, 68, 0.4) !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+/* Video Feed Container */
+.cctv-frame-wrap {
+  aspect-ratio: 16 / 9 !important;
+  width: 100% !important;
+  min-height: 210px !important;
+  border-radius: 12px !important;
+  border: 1.5px solid rgba(0, 240, 255, 0.35) !important;
+  background: #000000 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85), inset 0 0 20px rgba(0, 240, 255, 0.08) !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.cctv-frame-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+
+#cctv-frame {
+  display: none !important;
+}
+
+/* Source Status Badge */
+#cctv-source-badge {
+  display: inline-flex !important;
+  align-self: flex-start !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  padding: 4px 10px !important;
+  border-radius: 12px !important;
+  background: rgba(0, 240, 255, 0.12) !important;
+  border: 1px solid rgba(0, 240, 255, 0.4) !important;
+  color: #67e8f9 !important;
+}
+
+/* Camera Selector Dropdown */
+#cctv-camera-select {
+  width: 100% !important;
+  height: 40px !important;
+  background: rgba(15, 32, 50, 0.95) !important;
+  border: 1px solid rgba(0, 240, 255, 0.35) !important;
+  border-radius: 10px !important;
+  color: #f1f5f9 !important;
+  font-family: var(--font-sans, sans-serif) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 0 12px !important;
+  cursor: pointer !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+#cctv-camera-select:focus,
+#cctv-camera-select:hover {
+  border-color: #00f0ff !important;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.3) !important;
+}
+
+#cctv-camera-select option {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  padding: 8px !important;
+}
+
+/* Control Buttons Row */
+#cctv-panel .cctv-controls {
+  display: flex !important;
+  gap: 8px !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+#cctv-enable-btn,
+#cctv-prev-btn,
+#cctv-next-btn {
+  flex: 1 !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  cursor: pointer !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(0, 240, 255, 0.28) !important;
+  color: #cffafe !important;
+  transition: all 0.2s ease !important;
+  text-align: center !important;
+}
+
+#cctv-enable-btn.active {
+  background: rgba(239, 68, 68, 0.3) !important;
+  border-color: #ef4444 !important;
+  color: #fecaca !important;
+}
+
+#cctv-enable-btn:hover,
+#cctv-prev-btn:hover,
+#cctv-next-btn:hover {
+  background: rgba(0, 240, 255, 0.25) !important;
+  border-color: #00f0ff !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.35) !important;
+}
+
+/* Hazard Telemetry & Situation Card */
+#cctv-meta {
+  padding: 10px 12px !important;
+  border-radius: 10px !important;
+  background: rgba(12, 28, 44, 0.85) !important;
+  border: 1px solid rgba(0, 240, 255, 0.25) !important;
+  font-family: var(--font-sans, sans-serif) !important;
+  line-height: 1.45 !important;
+}
+
+.cctv-summary-label {
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  color: #7dd3fc !important;
+  text-transform: uppercase !important;
+  margin-top: 2px !important;
+  margin-bottom: 4px !important;
+}
+
+#cctv-summary {
+  font-family: var(--font-sans, sans-serif) !important;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+  color: #f1f5f9 !important;
+  padding: 10px 12px !important;
+  border-radius: 8px !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  border-left: 3px solid #00f0ff !important;
+  min-height: 52px !important;
+  text-shadow: none !important;
+}
+

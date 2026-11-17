@@ -1,0 +1,21 @@
+.climate-chat{position:fixed;right:20px;bottom:32px;z-index:60;font:14px/1.5 system-ui,sans-serif;color:#e5edf7}
+.climate-chat button{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #39556c;border-radius:10px;padding:9px 12px;background:#18374d;color:#e5edf7;font:inherit}
+.climate-chat button:disabled{opacity:.5;cursor:not-allowed}
+.climate-chat button:hover:not(:disabled){background:#24506d}
+.climate-chat :focus-visible{outline:2px solid #67e8f9;outline-offset:3px}
+.climate-chat-launcher{float:right;box-shadow:0 8px 28px #0004}
+.climate-chat-panel{display:flex;flex-direction:column;width:min(400px,calc(100vw - 32px));height:min(620px,calc(100dvh - 150px));min-height:240px;margin-bottom:12px;border:1px solid #466077;border-radius:18px;background:#0c2030;box-shadow:0 18px 65px #0006;overflow:hidden;animation:chat-enter .22s ease-out}
+.climate-chat-panel header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid #2c4254}
+.climate-chat-panel small{display:block;color:#aec4d6;font-size:11px}
+.climate-chat-context{padding:8px 16px;background:#163447;color:#a5edee;font-size:12px}
+.climate-chat-notice{font-size:11px;color:#c5d3df;padding:10px 16px;margin:0;border-bottom:1px solid #2c4254}
+.climate-chat-log{flex:1;min-height:60px;overflow:auto;overscroll-behavior:contain;padding:16px}
+.climate-chat-welcome h3{font-size:17px;margin:0 0 8px}.climate-chat-welcome p{color:#b6c9d9;margin:0 0 16px}.climate-chat-welcome button{display:flex;width:100%;text-align:left;justify-content:flex-start;margin:8px 0}
+.climate-chat-message{padding:12px;border-radius:12px;background:#142f43;margin-bottom:12px;overflow-wrap:anywhere}.climate-chat-message.user{margin-left:24px;background:#20455a}.climate-chat-message p{white-space:pre-wrap;margin:4px 0 0}
+.climate-chat-panel form{padding:12px 16px;border-top:1px solid #2c4254}.climate-chat-label{display:block;font-size:12px;margin-bottom:6px}
+.climate-chat textarea{width:100%;resize:none;padding:10px;border-radius:9px;background:#091a28;color:#e5edf7;border:1px solid #466077;font:inherit;box-sizing:border-box}
+.climate-chat-actions{display:flex;justify-content:space-between;margin-top:8px}.climate-chat .climate-chat-send{background:#126f89}
+.climate-chat-error{margin:0;padding:10px 16px;background:#4a262c;color:#ffdadd;font-size:12px;max-height:100px;overflow:auto}
+@keyframes chat-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.climate-chat{right:12px;bottom:30px}.climate-chat-panel{width:calc(100vw - 24px)}}
+@media(prefers-reduced-motion:reduce){.climate-chat-panel{animation:none}}

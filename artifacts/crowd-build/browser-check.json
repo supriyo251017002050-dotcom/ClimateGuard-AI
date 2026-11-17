@@ -1,0 +1,12 @@
+{
+  "tested": [
+    "demo sign-in",
+    "crowd page",
+    "ops page"
+  ],
+  "errors": [
+    "Failed to execute 'addColorStop' on 'CanvasGradient': The value provided ('rgba(FF2222,0.55)') could not be parsed as a color."
+  ],
+  "llmRequestsBlocked": true,
+  "cameraEnabled": false
+}

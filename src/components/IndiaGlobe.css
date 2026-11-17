@@ -1,0 +1,47 @@
+.india-globe { position: relative; width: 100%; height: 100%; min-height: 350px; background: #071523; }
+.india-globe-canvas { position: absolute; inset: 0; }
+.india-globe-canvas canvas { touch-action: none; overscroll-behavior: contain; }
+.india-globe-controls, .india-globe-status { position: absolute; z-index: 2; color: #edf5fa; background: rgba(11,28,43,.94); border: 1px solid #426074; border-radius: 10px; padding: 12px; font: 13px/1.5 system-ui,sans-serif; }
+.india-globe-controls { top: 12px; left: 12px; width: min(290px, calc(100% - 24px)); overflow: hidden; box-shadow: 0 8px 24px #0003; }
+.india-globe-controls-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.india-globe-control-title > span { display:flex;align-items:center;gap:6px;margin-bottom:5px;color:#79e1e2;font:700 9px/1 'JetBrains Mono',monospace;letter-spacing:.16em; }
+.india-globe-control-title > span i { width:6px;height:6px;border-radius:50%;background:#5fe0d0;box-shadow:0 0 0 4px rgba(95,224,208,.12),0 0 12px #5fe0d0;animation:eye-pulse 1.8s ease-in-out infinite; }
+.india-globe-controls-header strong { margin: 0; }
+.india-globe .india-globe-toggle { display: inline-flex; align-items: center; gap: 3px; min-height: 32px; padding: 4px 7px; border-radius: 8px; }
+.india-globe-toggle svg { transition: transform 280ms ease; }
+.india-globe-controls-reveal { display: grid; grid-template-rows: 1fr; opacity: 1; transition: grid-template-rows 300ms cubic-bezier(.22,1,.36,1), opacity 180ms ease; }
+.india-globe-controls-scroll { min-height: 0; max-height: min(55vh, 480px); overflow-y: auto; overscroll-behavior: contain; }
+.india-globe-controls-scroll > p:first-child { margin-top: 8px; }
+.india-globe-controls.is-collapsed .india-globe-controls-reveal { grid-template-rows: 0fr; opacity: 0; }
+.india-globe-controls.is-collapsed .india-globe-controls-scroll { overflow: hidden; }
+.india-globe-controls.is-collapsed .india-globe-toggle svg { transform: rotate(180deg); }
+.india-globe-toggle:focus-visible { outline: 2px solid #70d9ff; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .india-globe-controls-reveal, .india-globe-toggle svg { transition: none; }
+}
+.india-globe-controls strong { display: block; font-size: 17px; margin-bottom: 8px; }
+.india-globe-controls label { display: block; }
+.india-globe-buttons { display: flex; gap: 6px; align-items: center; margin: 6px 0; flex-wrap: wrap; }
+.india-globe button, .india-globe select, .india-globe input:not([type=checkbox]) { background: #18374c; color: #fff; border: 1px solid #668197; padding: 6px 8px; border-radius: 5px; }
+.india-globe button { cursor: pointer; }
+.india-globe button:disabled { opacity: .5; cursor: default; }
+.india-globe button:hover:not(:disabled) { background: #285571; }
+.india-globe button[aria-pressed="true"] { background: #135778; border-color: #74d4fb; box-shadow: inset 0 0 0 1px #74d4fb; }
+.india-globe select { width: 100%; margin: 4px 0 8px; }
+.india-globe input:not([type=checkbox]) { min-width: 0; flex: 1; width: 160px; }
+.india-globe small { display: block; color: #b5cbd9; font-size: 11px; }
+.ops-map-telemetry { display:grid;grid-template-columns:1fr 1fr 1.2fr;margin:10px 0;border-block:1px solid #315064;background:rgba(5,19,29,.6); }
+.ops-map-telemetry span { min-width:0;padding:7px 6px;color:#e6f4f6;font:600 10px/1.2 'JetBrains Mono',monospace;font-variant-numeric:tabular-nums; }
+.ops-map-telemetry span+span { border-left:1px solid #315064; }
+.ops-map-telemetry b { display:block;margin-bottom:4px;color:#6f909f;font-size:8px;letter-spacing:.12em; }
+.ops-quick-targets { margin:9px 0; }
+.ops-quick-targets>span { color:#7896a5;font:700 9px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.1em; }
+.ops-quick-targets>div { display:flex;flex-wrap:wrap;gap:5px;margin-top:5px; }
+.ops-quick-targets button { flex:1 1 auto;padding:5px 7px;font-size:11px; }
+.india-globe--operations .india-globe-controls { width:min(304px,calc(100% - 24px));border-color:#3d6570;background:rgba(5,22,32,.94);box-shadow:0 16px 42px rgba(0,12,20,.5),inset 0 1px rgba(130,231,224,.08); }
+.india-globe--operations .india-globe-controls-scroll { max-height:min(59vh,560px); }
+@keyframes eye-pulse { 50% { opacity:.45;transform:scale(.78); } }
+.india-globe-status { display: none; }
+.india-globe-status p { color: #ffdda6; margin: 4px 0; }
+.india-globe .cesium-viewer-bottom { background: rgba(255,255,255,.9); color: #111; max-width: 100%; }
+.india-globe .cesium-credit-textContainer a { color: #163b61; }

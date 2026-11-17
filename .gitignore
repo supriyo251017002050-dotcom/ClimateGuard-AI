@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+
+# Inner app build and dependencies
+gods-eye-view/node_modules
+gods-eye-view/dist
+gods-eye-view/.gev-cache
+gods-eye-view/.gev-logs
+gods-eye-view/.gstack
+gods-eye-view/screenshots
+gods-eye-view/qa-shots
+
+# Temporary and local artifacts
+.chart-data-*
+tmp/
+output/
+tmp_*.html
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

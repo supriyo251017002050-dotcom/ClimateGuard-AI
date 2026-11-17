@@ -1,0 +1,1352 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#89f5e7",
+              "outline-variant": "#c1c6d5",
+              surface: "#f8f9ff",
+              "on-secondary-fixed-variant": "#005049",
+              "on-primary-fixed-variant": "#00458e",
+              "on-tertiary-fixed-variant": "#004b73",
+              primary: "#004e9f",
+              "on-tertiary-container": "#d8ebff",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#0b1c30",
+              "primary-fixed-dim": "#aac7ff",
+              "tertiary-fixed-dim": "#93ccff",
+              "surface-container-highest": "#d3e4fe",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#aac7ff",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f8f9ff",
+              "surface-container-low": "#eff4ff",
+              "secondary-fixed-dim": "#6bd8cb",
+              "surface-dim": "#cbdbf5",
+              "surface-container-high": "#dce9ff",
+              "on-secondary-container": "#006f66",
+              "primary-container": "#0066cc",
+              "on-secondary-fixed": "#00201d",
+              secondary: "#006a61",
+              "primary-fixed": "#d7e3ff",
+              "on-surface": "#0b1c30",
+              "on-tertiary-fixed": "#001d31",
+              tertiary: "#005582",
+              "on-surface-variant": "#414753",
+              "surface-tint": "#005cba",
+              "inverse-surface": "#213145",
+              "on-error-container": "#93000a",
+              "surface-variant": "#d3e4fe",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#eaf1ff",
+              "on-primary-container": "#dfe8ff",
+              "surface-container": "#e5eeff",
+              outline: "#727784",
+              background: "#f8f9ff",
+              "tertiary-container": "#006ea7",
+              "secondary-container": "#86f2e4",
+              error: "#ba1a1a",
+              "on-primary-fixed": "#001b3e",
+              "tertiary-fixed": "#cce5ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-lg": "1.25rem",
+              "space-2xs": "0.125rem",
+              "telemetry-panel-width": "22rem",
+              "space-xs": "0.25rem",
+              "space-xl": "1.5rem",
+              "space-base": "1rem",
+              "gutter-grid": "1rem",
+              "sidebar-width": "16.25rem",
+              "space-3xl": "3rem",
+              "space-sm": "0.5rem",
+              "space-md": "0.75rem",
+              "space-2xl": "2rem",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "badge-mono": ["Geist"],
+              "headline-md": ["Geist"],
+              display: ["Geist"],
+              "telemetry-data": ["Geist"],
+              "body-sm": ["Inter"],
+              "label-md": ["Geist"],
+              "body-md": ["Inter"],
+              "headline-sm": ["Geist"],
+              "label-sm": ["Geist"],
+              "headline-lg-mobile": ["Geist"],
+              "headline-lg": ["Geist"],
+            },
+            fontSize: {
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "badge-mono": [
+                "10px",
+                {
+                  lineHeight: "12px",
+                  letterSpacing: "0.06em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              display: [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.025em",
+                  fontWeight: "600",
+                },
+              ],
+              "telemetry-data": [
+                "13px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "headline-sm": [
+                "16px",
+                {
+                  lineHeight: "24px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "22px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-surface font-body-md text-body-md text-on-surface antialiased"
+  >
+    <aside
+      class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between select-none"
+    >
+      <div class="flex flex-col">
+        <div
+          class="h-16 px-space-base flex items-center gap-space-sm bg-surface-container-low"
+        >
+          <div
+            class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >shield_with_heart</span
+            >
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight"
+              >ClimateGuard AI</span
+            ><span
+              class="font-label-sm text-label-sm text-primary uppercase tracking-widest mt-0.5"
+              >Risk intelligence</span
+            >
+          </div>
+        </div>
+        <div class="px-space-base py-space-xs">
+          <div
+            class="flex items-center justify-between px-space-sm py-space-2xs rounded-lg bg-surface-container-highest/60"
+          >
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"
+              ></span
+              ><span
+                class="font-badge-mono text-badge-mono uppercase text-secondary font-bold tracking-wider"
+                >Operational Feed</span
+              >
+            </div>
+            <span
+              class="font-badge-mono text-badge-mono text-on-surface-variant"
+              >v4.8</span
+            >
+          </div>
+        </div>
+        <nav
+          class="px-space-sm pt-space-xs flex flex-col gap-1"
+          data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"
+        >
+          <a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="home"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">home</span
+            ><span class="font-label-md text-label-md">Home</span></a
+          ><a
+            aria-current="page"
+            class="flex items-center gap-space-md px-space-md py-2.5 transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg"
+            data-path="global-view"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">public</span
+            ><span class="font-label-md text-label-md">Global view</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="regional-india"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">pin_drop</span
+            ><span class="font-label-md text-label-md"
+              >India / Regional</span
+            ></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="states-breakdown"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">layers</span
+            ><span class="font-label-md text-label-md">States</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="dashboard-analytics"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]"
+              >query_stats</span
+            ><span class="font-label-md text-label-md">Dashboard</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="research-dossier"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">menu_book</span
+            ><span class="font-label-md text-label-md"
+              >Research dossier</span
+            ></a
+          >
+        </nav>
+      </div>
+      <div
+        class="p-space-base flex flex-col gap-space-base bg-surface-container-low"
+      >
+        <div
+          class="p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-space-sm"
+        >
+          <div class="flex items-center gap-space-xs text-primary">
+            <span class="material-symbols-outlined text-[16px]"
+              >auto_read_play</span
+            ><span
+              class="font-label-sm text-label-sm font-bold uppercase tracking-wider"
+              >Synthesis Review</span
+            >
+          </div>
+          <p
+            class="font-body-sm text-body-sm text-on-surface-variant leading-snug"
+          >
+            Full report: 8-source literature review, methodology, and disaster
+            profiles.
+          </p>
+          <a
+            class="w-full flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors"
+            data-path="research-dossier"
+            href="#"
+            ><span class="material-symbols-outlined text-[16px]"
+              >arrow_forward</span
+            ><span>Open dossier</span></a
+          >
+        </div>
+        <div class="flex items-center justify-between px-space-xs pt-space-xs">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[18px] text-secondary"
+              >light_mode</span
+            ><span class="font-label-sm text-label-sm text-on-surface-variant"
+              >Mode: Light</span
+            >
+          </div>
+          <div
+            class="flex items-center p-0.5 rounded-full bg-surface-container"
+          >
+            <button
+              aria-label="Active Light Mode"
+              class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-primary font-badge-mono text-badge-mono shadow-sm"
+              type="button"
+            >
+              LIGHT</button
+            ><button
+              aria-label="Dark Mode Inactive"
+              class="px-2 py-0.5 rounded-full text-outline font-badge-mono text-badge-mono hover:text-on-surface"
+              type="button"
+            >
+              DARK
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="pl-sidebar-width">
+      <header
+        class="fixed top-0 left-sidebar-width right-0 h-16 z-40 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+      >
+        <div
+          class="h-16 w-full px-space-base flex items-center justify-between"
+        >
+          <div class="flex items-center gap-space-base min-w-0">
+            <img
+              alt="ClimateGuard AI Logo"
+              class="h-8 w-auto object-contain shrink-0"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1V1lI1iJbCNiuvXsM0FvB1OsQOEsyKX-Ca6QHOj2S10J-t4f5akbpC5QOwZwVfn0u4XJNCgGkRrQsqKAGLRiUsMLGlEb_6XTljxeCtL55XzkXAdhdlzakZ9IS7vC99N2LGHaWtLiXZQ7Y1FoP2zMkvGqpci9dIkzf64zZkum0auiqgf-79vKAUok5WDQ5CHkVbMs1Dz0bcyjQDamTm-kGQONd1E24RoX1Y1xNwTgxkMUZuXnhlnvAih_Q"
+            />
+            <div
+              class="flex items-center gap-space-xs font-badge-mono text-badge-mono tracking-wider truncate text-on-surface-variant"
+            >
+              <span class="hover:text-on-surface cursor-pointer"
+                >CLIMATEGURARD AI</span
+              ><span class="text-outline-variant">/</span
+              ><span
+                class="text-primary hover:text-primary-container cursor-pointer font-bold"
+                >INDIA</span
+              ><span class="text-outline-variant">/</span
+              ><span class="hover:text-on-surface cursor-pointer"
+                >RISK CONSOLE</span
+              ><span class="text-outline-variant">/</span
+              ><span
+                class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-bold"
+                >PROTOTYPE</span
+              >
+            </div>
+          </div>
+          <div class="flex items-center gap-space-base shrink-0">
+            <nav
+              class="hidden lg:flex items-center gap-1 bg-surface-container-low p-1 rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.02)]"
+              data-active-classes="bg-surface-container-highest text-primary font-semibold rounded-lg"
+            >
+              <a
+                class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                data-path="regional-india"
+                href="#"
+                >Integrated</a
+              ><a
+                aria-current="page"
+                class="px-space-md py-1.5 transition-colors bg-surface-container-highest text-primary font-semibold rounded-lg"
+                data-path="global-view"
+                href="#"
+                >3D Globe</a
+              ><a
+                class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                data-path="dashboard-analytics"
+                href="#"
+                >Dashboard</a
+              >
+            </nav>
+            <a
+              class="hidden sm:inline-flex items-center justify-center px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-colors"
+              data-path="research-dossier"
+              href="#"
+              >Research dossier</a
+            >
+            <div
+              class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-on-primary text-[18px]"
+                >person</span
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="relative w-full pt-16 bg-surface min-h-screen">
+        <div
+          class="flex flex-col w-full relative min-h-[calc(100vh-4rem)] overflow-hidden select-none bg-surface"
+        >
+          <div class="absolute inset-0 z-0 overflow-hidden pointer-events-auto">
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-surface via-surface-container-low/40 to-surface pointer-events-none z-[1]"
+            ></div>
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"
+            ></div>
+            <div
+              class="absolute -top-32 right-12 w-96 h-96 rounded-full bg-secondary-fixed/25 blur-3xl pointer-events-none"
+            ></div>
+            <div
+              class="absolute bottom-10 left-16 w-80 h-80 rounded-full bg-error-container/30 blur-3xl pointer-events-none"
+            ></div>
+            <!-- STITCH_THREEJS_START:ANIMATION_8 class="absolute inset-0 w-full h-full bg-transparent" -->
+            <div
+              class="absolute inset-0 w-full h-full bg-transparent"
+              style="display: block"
+            >
+              <script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+              <div
+                id="threejs-container-ANIMATION_8"
+                style="width: 100%; height: 100%"
+              ></div>
+              <script>
+                (function () {
+                  const container = document.getElementById(
+                    "threejs-container-ANIMATION_8",
+                  );
+                  const devicePixelRatio = window.devicePixelRatio || 1;
+                  const width = container.clientWidth || window.innerWidth;
+                  const height = container.clientHeight || window.innerHeight;
+
+                  const scene = new THREE.Scene();
+                  const camera = new THREE.PerspectiveCamera(
+                    45,
+                    width / height,
+                    0.1,
+                    1000,
+                  );
+                  camera.position.set(0, 0, 3.2);
+
+                  const renderer = new THREE.WebGLRenderer({
+                    antialias: true,
+                    alpha: true,
+                  });
+                  renderer.setSize(width, height);
+                  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                  container.appendChild(renderer.domElement);
+
+                  // Lighting
+                  const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+                  scene.add(ambientLight);
+
+                  const dirLight = new THREE.DirectionalLight(0x38bdf8, 1.8);
+                  dirLight.position.set(5, 3, 5);
+                  scene.add(dirLight);
+
+                  const blueRimLight = new THREE.PointLight(0x0284c7, 2.5, 20);
+                  blueRimLight.position.set(-6, -2, -3);
+                  scene.add(blueRimLight);
+
+                  // Globe Group
+                  const globeGroup = new THREE.Group();
+                  scene.add(globeGroup);
+
+                  // Base Earth Sphere
+                  const sphereGeo = new THREE.SphereGeometry(1.2, 64, 64);
+                  const sphereMat = new THREE.MeshPhongMaterial({
+                    color: 0x0f172a,
+                    emissive: 0x082f49,
+                    specular: 0x38bdf8,
+                    shininess: 25,
+                    wireframe: false,
+                  });
+                  const earthMesh = new THREE.Mesh(sphereGeo, sphereMat);
+                  globeGroup.add(earthMesh);
+
+                  // Lat/Long Wireframe Grid
+                  const wireGeo = new THREE.SphereGeometry(1.205, 32, 16);
+                  const wireMat = new THREE.MeshBasicMaterial({
+                    color: 0x0284c7,
+                    wireframe: true,
+                    transparent: true,
+                    opacity: 0.22,
+                  });
+                  const wireMesh = new THREE.Mesh(wireGeo, wireMat);
+                  globeGroup.add(wireMesh);
+
+                  // Atmosphere Glow Shell
+                  const atmosGeo = new THREE.SphereGeometry(1.28, 48, 48);
+                  const atmosMat = new THREE.MeshBasicMaterial({
+                    color: 0x38bdf8,
+                    transparent: true,
+                    opacity: 0.12,
+                    side: THREE.BackSide,
+                  });
+                  const atmosMesh = new THREE.Mesh(atmosGeo, atmosMat);
+                  globeGroup.add(atmosMesh);
+
+                  // Geo-Points & Risk Pulses (India, Africa, Europe, US, etc.)
+                  const pointsData = [
+                    {
+                      lat: 20.5937,
+                      lon: 78.9629,
+                      risk: "High",
+                      color: 0xef4444,
+                      size: 0.045,
+                      label: "India Heatwave & Flood Index",
+                    },
+                    {
+                      lat: 28.6139,
+                      lon: 77.209,
+                      risk: "Severe",
+                      color: 0xf59e0b,
+                      size: 0.038,
+                      label: "New Delhi AQI Spike",
+                    },
+                    {
+                      lat: 19.076,
+                      lon: 72.8777,
+                      risk: "Extreme",
+                      color: 0xef4444,
+                      size: 0.042,
+                      label: "Mumbai Coastal Surge",
+                    },
+                    {
+                      lat: 13.0827,
+                      lon: 80.2707,
+                      risk: "High",
+                      color: 0x06b6d4,
+                      size: 0.035,
+                      label: "Chennai Cyclone Alert",
+                    },
+                    {
+                      lat: 51.5074,
+                      lon: -0.1278,
+                      risk: "Moderate",
+                      color: 0x10b981,
+                      size: 0.032,
+                      label: "London Grid Resilient",
+                    },
+                    {
+                      lat: 40.7128,
+                      lon: -74.006,
+                      risk: "Moderate",
+                      color: 0x3b82f6,
+                      size: 0.035,
+                      label: "NY East Coast Station",
+                    },
+                    {
+                      lat: 1.3521,
+                      lon: 103.8198,
+                      risk: "High",
+                      color: 0xf59e0b,
+                      size: 0.032,
+                      label: "Singapore Humidity Index",
+                    },
+                    {
+                      lat: -26.2041,
+                      lon: 28.0473,
+                      risk: "Elevated",
+                      color: 0xef4444,
+                      size: 0.034,
+                      label: "Johannesburg Drought Monitoring",
+                    },
+                  ];
+
+                  function latLonToVector3(lat, lon, radius) {
+                    const phi = (90 - lat) * (Math.PI / 180);
+                    const theta = (lon + 180) * (Math.PI / 180);
+                    const x = -(radius * Math.sin(phi) * Math.cos(theta));
+                    const z = radius * Math.sin(phi) * Math.sin(theta);
+                    const y = radius * Math.cos(phi);
+                    return new THREE.Vector3(x, y, z);
+                  }
+
+                  const pulseMeshes = [];
+
+                  pointsData.forEach((pt) => {
+                    const pos = latLonToVector3(pt.lat, pt.lon, 1.22);
+                    const pGeo = new THREE.SphereGeometry(pt.size, 16, 16);
+                    const pMat = new THREE.MeshBasicMaterial({
+                      color: pt.color,
+                    });
+                    const mesh = new THREE.Mesh(pGeo, pMat);
+                    mesh.position.copy(pos);
+                    globeGroup.add(mesh);
+
+                    // Outer glowing pulse ring
+                    const ringGeo = new THREE.RingGeometry(
+                      pt.size * 1.1,
+                      pt.size * 2.2,
+                      24,
+                    );
+                    const ringMat = new THREE.MeshBasicMaterial({
+                      color: pt.color,
+                      side: THREE.DoubleSide,
+                      transparent: true,
+                      opacity: 0.75,
+                    });
+                    const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+                    ringMesh.position.copy(pos);
+                    ringMesh.lookAt(pos.clone().multiplyScalar(2));
+                    globeGroup.add(ringMesh);
+                    pulseMeshes.push({ ring: ringMesh, baseScale: 1 });
+
+                    // Beacon projection line
+                    const lineGeo = new THREE.BufferGeometry().setFromPoints([
+                      pos,
+                      pos.clone().multiplyScalar(1.15),
+                    ]);
+                    const lineMat = new THREE.LineBasicMaterial({
+                      color: pt.color,
+                      transparent: true,
+                      opacity: 0.6,
+                    });
+                    const line = new THREE.Line(lineGeo, lineMat);
+                    globeGroup.add(line);
+                  });
+
+                  // Arcs between stations
+                  function createArc(p1, p2, col) {
+                    const v1 = latLonToVector3(p1.lat, p1.lon, 1.22);
+                    const v2 = latLonToVector3(p2.lat, p2.lon, 1.22);
+                    const mid = v1.clone().add(v2).multiplyScalar(0.5);
+                    const distance = v1.distanceTo(v2);
+                    mid.normalize().multiplyScalar(1.22 + distance * 0.35);
+
+                    const curve = new THREE.QuadraticBezierCurve3(v1, mid, v2);
+                    const points = curve.getPoints(32);
+                    const arcGeo = new THREE.BufferGeometry().setFromPoints(
+                      points,
+                    );
+                    const arcMat = new THREE.LineBasicMaterial({
+                      color: col,
+                      transparent: true,
+                      opacity: 0.5,
+                    });
+                    return new THREE.Line(arcGeo, arcMat);
+                  }
+
+                  globeGroup.add(
+                    createArc(pointsData[0], pointsData[4], 0x38bdf8),
+                  );
+                  globeGroup.add(
+                    createArc(pointsData[0], pointsData[5], 0x60a5fa),
+                  );
+                  globeGroup.add(
+                    createArc(pointsData[0], pointsData[6], 0x34d399),
+                  );
+
+                  // Focus towards India initially
+                  globeGroup.rotation.y = 1.35;
+                  globeGroup.rotation.x = 0.28;
+
+                  // Drag interaction
+                  let isDragging = false;
+                  let previousMousePosition = { x: 0, y: 0 };
+
+                  container.addEventListener("mousedown", (e) => {
+                    isDragging = true;
+                    previousMousePosition = { x: e.clientX, y: e.clientY };
+                  });
+
+                  window.addEventListener("mouseup", () => {
+                    isDragging = false;
+                  });
+
+                  window.addEventListener("mousemove", (e) => {
+                    if (!isDragging) return;
+                    const deltaX = e.clientX - previousMousePosition.x;
+                    const deltaY = e.clientY - previousMousePosition.y;
+
+                    globeGroup.rotation.y += deltaX * 0.006;
+                    globeGroup.rotation.x += deltaY * 0.006;
+                    previousMousePosition = { x: e.clientX, y: e.clientY };
+                  });
+
+                  const onResize = () => {
+                    const w = container.clientWidth || window.innerWidth;
+                    const h = container.clientHeight || window.innerHeight;
+                    camera.aspect = w / h;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(w, h);
+                  };
+                  window.addEventListener("resize", onResize);
+
+                  let time = 0;
+                  function animate() {
+                    requestAnimationFrame(animate);
+                    time += 0.02;
+
+                    if (!isDragging) {
+                      globeGroup.rotation.y += 0.0018;
+                    }
+
+                    pulseMeshes.forEach((item, idx) => {
+                      const s = 1 + Math.sin(time * 3 + idx) * 0.45;
+                      item.ring.scale.set(s, s, s);
+                      item.ring.material.opacity = Math.max(
+                        0.1,
+                        0.8 - (s - 0.55) * 0.5,
+                      );
+                    });
+
+                    renderer.render(scene, camera);
+                  }
+                  animate();
+                })();
+              </script>
+            </div>
+            <!-- STITCH_THREEJS_END:ANIMATION_8 -->
+            <div
+              class="absolute inset-0 pointer-events-none z-[2] opacity-40 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-surface-container-highest/20 to-surface-dim/40"
+            ></div>
+          </div>
+          <div
+            class="relative z-10 w-full p-space-base flex flex-col justify-between flex-1 pointer-events-none gap-space-lg"
+          >
+            <div class="w-full flex items-start justify-between gap-space-base">
+              <div
+                class="pointer-events-auto flex flex-col gap-space-xs max-w-sm"
+              >
+                <div
+                  class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-lowest/85 backdrop-blur-md shadow-sm"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-secondary animate-ping"
+                  ></span>
+                  <span
+                    class="w-2 h-2 -ml-3.5 rounded-full bg-secondary"
+                  ></span>
+                  <span
+                    class="font-badge-mono text-badge-mono text-on-surface uppercase tracking-wider"
+                    >Planetary GIS Core · EPSG:4326</span
+                  >
+                  <span
+                    class="font-badge-mono text-badge-mono px-1.5 py-0.5 rounded bg-surface-container text-primary font-semibold"
+                    >SYNCHRONIZED</span
+                  >
+                </div>
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-md flex flex-col gap-space-xs"
+                >
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider"
+                      >Spatial Risk Telemetry</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-[18px] text-primary"
+                      >sensors</span
+                    >
+                  </div>
+                  <p
+                    class="font-headline-sm text-headline-sm text-on-surface leading-tight"
+                  >
+                    Geospatial Environmental Risk Engine
+                  </p>
+                  <div class="flex items-center gap-space-sm mt-1">
+                    <span
+                      class="font-badge-mono text-badge-mono text-on-surface-variant"
+                      >LOD 4.2 HIGH-RES</span
+                    >
+                    <span class="text-outline-variant">•</span>
+                    <span class="font-badge-mono text-badge-mono text-secondary"
+                      >0.05° RESOLUTION</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pointer-events-auto flex flex-col gap-space-sm w-telemetry-panel-width"
+              >
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-md flex flex-col gap-space-sm"
+                >
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="material-symbols-outlined text-[18px] text-error"
+                        >warning</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface"
+                        >Climate Risk Index</span
+                      >
+                    </div>
+                    <span
+                      class="font-badge-mono text-badge-mono px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-bold"
+                      >LEVEL 4 EXTREME</span
+                    >
+                  </div>
+                  <div class="flex items-baseline justify-between mt-1">
+                    <div class="flex items-baseline gap-1">
+                      <span
+                        class="font-display text-display text-on-surface tracking-tight"
+                        id="risk-score"
+                        >78.4</span
+                      >
+                      <span
+                        class="font-headline-sm text-headline-sm text-on-surface-variant"
+                        >/ 100</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center gap-0.5 px-2 py-1 rounded bg-error-container/60 text-error"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >trending_up</span
+                      >
+                      <span class="font-badge-mono text-badge-mono font-bold"
+                        >+3.2%</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-gradient-to-r from-secondary via-secondary-container to-error rounded-full"
+                      style="width: 78.4%"
+                    ></div>
+                  </div>
+                  <div
+                    class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"
+                  >
+                    <span>Historical Baseline: 61.2</span>
+                    <span class="text-error font-medium"
+                      >30-Yr Std Dev Exceeded</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-md flex flex-col gap-space-sm"
+                >
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="material-symbols-outlined text-[18px] text-primary"
+                        >satellite_alt</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface"
+                        >Orbital Constellation</span
+                      >
+                    </div>
+                    <span
+                      class="font-badge-mono text-badge-mono text-secondary flex items-center gap-1 font-bold"
+                    >
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"
+                      ></span>
+                      LOCKED
+                    </span>
+                  </div>
+                  <div class="flex flex-col gap-1.5 mt-0.5">
+                    <div
+                      class="flex items-center justify-between p-1.5 rounded-lg bg-surface-container-low"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-[16px] text-tertiary"
+                          >radar</span
+                        >
+                        <span
+                          class="font-telemetry-data text-telemetry-data text-on-surface"
+                          >INSAT-3DR Rapid Met</span
+                        >
+                      </div>
+                      <span
+                        class="font-badge-mono text-badge-mono text-on-surface-variant"
+                        >Δt: 4m ago</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center justify-between p-1.5 rounded-lg bg-surface-container-low"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-[16px] text-primary"
+                          >photo_camera</span
+                        >
+                        <span
+                          class="font-telemetry-data text-telemetry-data text-on-surface"
+                          >Sentinel-2 Multispectral</span
+                        >
+                      </div>
+                      <span
+                        class="font-badge-mono text-badge-mono text-secondary font-semibold"
+                        >99.8% Sync</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-space-md rounded-xl bg-error-container/80 backdrop-blur-xl shadow-md flex items-start gap-space-sm text-on-error-container"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px] text-error shrink-0 mt-0.5 animate-bounce"
+                    >cyclone</span
+                  >
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-error"
+                      >Active Cyclone Storm Alert</span
+                    >
+                    <p
+                      class="font-body-sm text-body-sm font-medium mt-0.5 leading-snug"
+                    >
+                      Bay of Bengal 48h watch: Tropical depression intensifying
+                      to Severe Cyclonic Storm. Coastal landfall model updated.
+                    </p>
+                    <div class="flex items-center gap-2 mt-2">
+                      <span
+                        class="font-badge-mono text-badge-mono px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-error font-bold"
+                        >IMD CAT-3</span
+                      >
+                      <span
+                        class="font-badge-mono text-badge-mono text-on-error-container/90"
+                        >Lat 14.8°N / Long 87.2°E</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex items-end justify-between gap-space-base">
+              <div
+                class="pointer-events-auto flex flex-col gap-space-sm max-w-sm w-full"
+              >
+                <div class="flex items-center justify-between px-space-xs">
+                  <span
+                    class="font-badge-mono text-badge-mono uppercase text-on-surface-variant tracking-wider font-semibold"
+                    >Real-time Anomaly Hotspots (5 Monitored)</span
+                  >
+                  <span
+                    class="font-badge-mono text-badge-mono px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold"
+                    >LIVE TELEMETRY</span
+                  >
+                </div>
+                <div class="flex flex-col gap-2">
+                  <button
+                    class="w-full text-left p-space-sm rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm hover:bg-surface-container-highest transition-all flex items-center justify-between group"
+                    type="button"
+                  >
+                    <div class="flex items-center gap-space-sm">
+                      <div
+                        class="w-8 h-8 rounded-lg bg-error-container text-error flex items-center justify-center shrink-0"
+                      >
+                        <span class="material-symbols-outlined text-[18px]"
+                          >thermostat</span
+                        >
+                      </div>
+                      <div class="flex flex-col">
+                        <span
+                          class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors"
+                          >Northern Plains</span
+                        >
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Severe Heatwave Anomaly</span
+                        >
+                      </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                      <span
+                        class="font-headline-sm text-headline-sm text-error font-bold leading-none"
+                        >46.2°C</span
+                      >
+                      <span
+                        class="font-badge-mono text-badge-mono text-on-surface-variant"
+                        >+6.1° vs seasonal</span
+                      >
+                    </div>
+                  </button>
+                  <button
+                    class="w-full text-left p-space-sm rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm hover:bg-surface-container-highest transition-all flex items-center justify-between group"
+                    type="button"
+                  >
+                    <div class="flex items-center gap-space-sm">
+                      <div
+                        class="w-8 h-8 rounded-lg bg-primary-fixed text-primary flex items-center justify-center shrink-0"
+                      >
+                        <span class="material-symbols-outlined text-[18px]"
+                          >waves</span
+                        >
+                      </div>
+                      <div class="flex flex-col">
+                        <span
+                          class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors"
+                          >Coastal Maharashtra &amp; Mumbai</span
+                        >
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Tidal Surge Inundation</span
+                        >
+                      </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                      <span
+                        class="font-headline-sm text-headline-sm text-primary font-bold leading-none"
+                        >82%</span
+                      >
+                      <span class="font-badge-mono text-badge-mono text-primary"
+                        >High Exposure</span
+                      >
+                    </div>
+                  </button>
+                  <button
+                    class="w-full text-left p-space-sm rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm hover:bg-surface-container-highest transition-all flex items-center justify-between group"
+                    type="button"
+                  >
+                    <div class="flex items-center gap-space-sm">
+                      <div
+                        class="w-8 h-8 rounded-lg bg-secondary-fixed text-secondary flex items-center justify-center shrink-0"
+                      >
+                        <span class="material-symbols-outlined text-[18px]"
+                          >flood</span
+                        >
+                      </div>
+                      <div class="flex flex-col">
+                        <span
+                          class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors"
+                          >Brahmaputra Basin</span
+                        >
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Flood Warning Level 2</span
+                        >
+                      </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                      <span
+                        class="font-headline-sm text-headline-sm text-secondary font-bold leading-none"
+                        >1.84m</span
+                      >
+                      <span
+                        class="font-badge-mono text-badge-mono text-secondary"
+                        >Above Danger Mk</span
+                      >
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="pointer-events-auto flex flex-col items-center gap-space-sm mx-auto max-w-2xl w-full"
+              >
+                <div
+                  class="px-space-md py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-sm flex items-center gap-2"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-primary"
+                    >travel_explore</span
+                  >
+                  <span
+                    class="font-badge-mono text-badge-mono uppercase text-on-surface tracking-wider font-semibold"
+                    >3D Earth · Drag to Rotate · Scroll to Zoom · Click Node to
+                    Inspect</span
+                  >
+                </div>
+                <div
+                  class="w-full p-space-sm rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-xl flex flex-wrap items-center justify-between gap-space-sm"
+                >
+                  <div
+                    class="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl"
+                  >
+                    <button
+                      class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all hover:bg-primary-container flex items-center gap-1.5"
+                      id="btn-india-focus"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >filter_center_focus</span
+                      >
+                      <span>India Focus</span>
+                    </button>
+                    <button
+                      class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5"
+                      id="btn-global-view"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >public</span
+                      >
+                      <span>Global View</span>
+                    </button>
+                    <button
+                      class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5"
+                      id="btn-reset-cam"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >restart_alt</span
+                      >
+                      <span>Reset Camera</span>
+                    </button>
+                  </div>
+                  <div
+                    class="h-6 w-px bg-surface-container-highest hidden md:block"
+                  ></div>
+                  <div
+                    class="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl"
+                  >
+                    <button
+                      class="layer-pill active px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm text-error font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1"
+                      data-layer="heat"
+                      type="button"
+                    >
+                      <span class="w-2 h-2 rounded-full bg-error"></span>
+                      <span>Heat Stress</span>
+                    </button>
+                    <button
+                      class="layer-pill px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1"
+                      data-layer="flood"
+                      type="button"
+                    >
+                      <span class="w-2 h-2 rounded-full bg-primary"></span>
+                      <span>Flood Inundation</span>
+                    </button>
+                    <button
+                      class="layer-pill px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1"
+                      data-layer="carbon"
+                      type="button"
+                    >
+                      <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                      <span>Carbon Flurry</span>
+                    </button>
+                    <button
+                      class="layer-pill px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1"
+                      data-layer="surge"
+                      type="button"
+                    >
+                      <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                      <span>Sea Level Surge</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <button
+                      aria-label="Zoom In"
+                      class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors"
+                      id="zoom-in"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >add</span
+                      >
+                    </button>
+                    <button
+                      aria-label="Zoom Out"
+                      class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors"
+                      id="zoom-out"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >remove</span
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pointer-events-auto hidden xl:flex flex-col gap-space-xs p-space-md rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-md min-w-[220px]"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface"
+                    >Projection Grid</span
+                  >
+                  <span
+                    class="font-badge-mono text-badge-mono text-secondary font-bold"
+                    >WGS 84</span
+                  >
+                </div>
+                <div class="flex items-center justify-between py-1">
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Centroid Lat</span
+                  >
+                  <span
+                    class="font-telemetry-data text-telemetry-data text-on-surface font-bold"
+                    >20.5937° N</span
+                  >
+                </div>
+                <div class="flex items-center justify-between py-1">
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Centroid Long</span
+                  >
+                  <span
+                    class="font-telemetry-data text-telemetry-data text-on-surface font-bold"
+                    >78.9629° E</span
+                  >
+                </div>
+                <div class="flex items-center justify-between py-1">
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Atmospheric Press</span
+                  >
+                  <span
+                    class="font-telemetry-data text-telemetry-data text-on-surface font-bold"
+                    >1009.2 hPa</span
+                  >
+                </div>
+                <div
+                  class="mt-1 pt-2 bg-surface-container-highest/40 -mx-space-md px-space-md flex items-center justify-between"
+                >
+                  <span
+                    class="font-badge-mono text-badge-mono text-on-surface-variant"
+                    >REFRESH RATE</span
+                  >
+                  <span
+                    class="font-badge-mono text-badge-mono text-primary font-bold"
+                    >60 FPS · WEBL-2</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            (function initGlobeRiskConsole() {
+              const layerPills = document.querySelectorAll(".layer-pill");
+              layerPills.forEach((pill) => {
+                pill.addEventListener("click", () => {
+                  layerPills.forEach((p) => {
+                    p.classList.remove(
+                      "bg-surface-container-lowest",
+                      "shadow-sm",
+                      "text-error",
+                      "text-primary",
+                      "text-secondary",
+                      "text-tertiary",
+                    );
+                    p.classList.add("text-on-surface-variant");
+                  });
+                  pill.classList.remove("text-on-surface-variant");
+                  pill.classList.add(
+                    "bg-surface-container-lowest",
+                    "shadow-sm",
+                  );
+                  const layer = pill.getAttribute("data-layer");
+                  if (layer === "heat") pill.classList.add("text-error");
+                  if (layer === "flood") pill.classList.add("text-primary");
+                  if (layer === "carbon") pill.classList.add("text-secondary");
+                  if (layer === "surge") pill.classList.add("text-tertiary");
+                });
+              });
+
+              const btnIndia = document.getElementById("btn-india-focus");
+              const btnGlobal = document.getElementById("btn-global-view");
+              const btnReset = document.getElementById("btn-reset-cam");
+
+              function setActivePivot(activeBtn) {
+                [btnIndia, btnGlobal, btnReset].forEach((b) => {
+                  if (b) {
+                    b.classList.remove(
+                      "bg-primary",
+                      "text-on-primary",
+                      "shadow-sm",
+                    );
+                    b.classList.add("text-on-surface-variant");
+                  }
+                });
+                if (activeBtn) {
+                  activeBtn.classList.remove("text-on-surface-variant");
+                  activeBtn.classList.add(
+                    "bg-primary",
+                    "text-on-primary",
+                    "shadow-sm",
+                  );
+                }
+              }
+
+              if (btnIndia)
+                btnIndia.addEventListener("click", () =>
+                  setActivePivot(btnIndia),
+                );
+              if (btnGlobal)
+                btnGlobal.addEventListener("click", () =>
+                  setActivePivot(btnGlobal),
+                );
+              if (btnReset)
+                btnReset.addEventListener("click", () =>
+                  setActivePivot(btnReset),
+                );
+
+              let zoomLevel = 1.0;
+              const zoomInBtn = document.getElementById("zoom-in");
+              const zoomOutBtn = document.getElementById("zoom-out");
+
+              if (zoomInBtn) {
+                zoomInBtn.addEventListener("click", () => {
+                  zoomLevel = Math.min(zoomLevel + 0.15, 2.5);
+                  zoomInBtn.style.transform = "scale(0.92)";
+                  setTimeout(() => (zoomInBtn.style.transform = ""), 100);
+                });
+              }
+
+              if (zoomOutBtn) {
+                zoomOutBtn.addEventListener("click", () => {
+                  zoomLevel = Math.max(zoomLevel - 0.15, 0.6);
+                  zoomOutBtn.style.transform = "scale(0.92)";
+                  setTimeout(() => (zoomOutBtn.style.transform = ""), 100);
+                });
+              }
+            })();
+          </script>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

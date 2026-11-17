@@ -1,0 +1,2251 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#89f5e7",
+              "outline-variant": "#c1c6d5",
+              surface: "#f8f9ff",
+              "on-secondary-fixed-variant": "#005049",
+              "on-primary-fixed-variant": "#00458e",
+              "on-tertiary-fixed-variant": "#004b73",
+              primary: "#004e9f",
+              "on-tertiary-container": "#d8ebff",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#0b1c30",
+              "primary-fixed-dim": "#aac7ff",
+              "tertiary-fixed-dim": "#93ccff",
+              "surface-container-highest": "#d3e4fe",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#aac7ff",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f8f9ff",
+              "surface-container-low": "#eff4ff",
+              "secondary-fixed-dim": "#6bd8cb",
+              "surface-dim": "#cbdbf5",
+              "surface-container-high": "#dce9ff",
+              "on-secondary-container": "#006f66",
+              "primary-container": "#0066cc",
+              "on-secondary-fixed": "#00201d",
+              secondary: "#006a61",
+              "primary-fixed": "#d7e3ff",
+              "on-surface": "#0b1c30",
+              "on-tertiary-fixed": "#001d31",
+              tertiary: "#005582",
+              "on-surface-variant": "#414753",
+              "surface-tint": "#005cba",
+              "inverse-surface": "#213145",
+              "on-error-container": "#93000a",
+              "surface-variant": "#d3e4fe",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#eaf1ff",
+              "on-primary-container": "#dfe8ff",
+              "surface-container": "#e5eeff",
+              outline: "#727784",
+              background: "#f8f9ff",
+              "tertiary-container": "#006ea7",
+              "secondary-container": "#86f2e4",
+              error: "#ba1a1a",
+              "on-primary-fixed": "#001b3e",
+              "tertiary-fixed": "#cce5ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-lg": "1.25rem",
+              "space-2xs": "0.125rem",
+              "telemetry-panel-width": "22rem",
+              "space-xs": "0.25rem",
+              "space-xl": "1.5rem",
+              "space-base": "1rem",
+              "gutter-grid": "1rem",
+              "sidebar-width": "16.25rem",
+              "space-3xl": "3rem",
+              "space-sm": "0.5rem",
+              "space-md": "0.75rem",
+              "space-2xl": "2rem",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "badge-mono": ["Geist"],
+              "headline-md": ["Geist"],
+              display: ["Geist"],
+              "telemetry-data": ["Geist"],
+              "body-sm": ["Inter"],
+              "label-md": ["Geist"],
+              "body-md": ["Inter"],
+              "headline-sm": ["Geist"],
+              "label-sm": ["Geist"],
+              "headline-lg-mobile": ["Geist"],
+              "headline-lg": ["Geist"],
+            },
+            fontSize: {
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "badge-mono": [
+                "10px",
+                {
+                  lineHeight: "12px",
+                  letterSpacing: "0.06em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              display: [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.025em",
+                  fontWeight: "600",
+                },
+              ],
+              "telemetry-data": [
+                "13px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "headline-sm": [
+                "16px",
+                {
+                  lineHeight: "24px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "22px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-surface font-body-md text-body-md text-on-surface antialiased"
+  >
+    <aside
+      class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between select-none"
+    >
+      <div class="flex flex-col">
+        <div
+          class="h-16 px-space-base flex items-center gap-space-sm bg-surface-container-low"
+        >
+          <div
+            class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >shield_with_heart</span
+            >
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight"
+              >ClimateGuard AI</span
+            ><span
+              class="font-label-sm text-label-sm text-primary uppercase tracking-widest mt-0.5"
+              >Risk intelligence</span
+            >
+          </div>
+        </div>
+        <div class="px-space-base py-space-xs">
+          <div
+            class="flex items-center justify-between px-space-sm py-space-2xs rounded-lg bg-surface-container-highest/60"
+          >
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"
+              ></span
+              ><span
+                class="font-badge-mono text-badge-mono uppercase text-secondary font-bold tracking-wider"
+                >Operational Feed</span
+              >
+            </div>
+            <span
+              class="font-badge-mono text-badge-mono text-on-surface-variant"
+              >v4.8</span
+            >
+          </div>
+        </div>
+        <nav
+          class="px-space-sm pt-space-xs flex flex-col gap-1"
+          data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"
+        >
+          <a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="home"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">home</span
+            ><span class="font-label-md text-label-md">Home</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="global-view"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">public</span
+            ><span class="font-label-md text-label-md">Global view</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="regional-india"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">pin_drop</span
+            ><span class="font-label-md text-label-md"
+              >India / Regional</span
+            ></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="states-breakdown"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">layers</span
+            ><span class="font-label-md text-label-md">States</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="dashboard-analytics"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]"
+              >query_stats</span
+            ><span class="font-label-md text-label-md">Dashboard</span></a
+          ><a
+            aria-current="page"
+            class="flex items-center gap-space-md px-space-md py-2.5 transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg"
+            data-path="research-dossier"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">menu_book</span
+            ><span class="font-label-md text-label-md"
+              >Research dossier</span
+            ></a
+          >
+        </nav>
+      </div>
+      <div
+        class="p-space-base flex flex-col gap-space-base bg-surface-container-low"
+      >
+        <div
+          class="p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-space-sm"
+        >
+          <div class="flex items-center gap-space-xs text-primary">
+            <span class="material-symbols-outlined text-[16px]"
+              >auto_read_play</span
+            ><span
+              class="font-label-sm text-label-sm font-bold uppercase tracking-wider"
+              >Synthesis Review</span
+            >
+          </div>
+          <p
+            class="font-body-sm text-body-sm text-on-surface-variant leading-snug"
+          >
+            Full report: 8-source literature review, methodology, and disaster
+            profiles.
+          </p>
+          <a
+            class="w-full flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors"
+            data-path="research-dossier"
+            href="#"
+            ><span class="material-symbols-outlined text-[16px]"
+              >arrow_forward</span
+            ><span>Open dossier</span></a
+          >
+        </div>
+        <div class="flex items-center justify-between px-space-xs pt-space-xs">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[18px] text-secondary"
+              >light_mode</span
+            ><span class="font-label-sm text-label-sm text-on-surface-variant"
+              >Mode: Light</span
+            >
+          </div>
+          <div
+            class="flex items-center p-0.5 rounded-full bg-surface-container"
+          >
+            <button
+              aria-label="Active Light Mode"
+              class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-primary font-badge-mono text-badge-mono shadow-sm"
+              type="button"
+            >
+              LIGHT</button
+            ><button
+              aria-label="Dark Mode Inactive"
+              class="px-2 py-0.5 rounded-full text-outline font-badge-mono text-badge-mono hover:text-on-surface"
+              type="button"
+            >
+              DARK
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="pl-sidebar-width">
+      <header
+        class="fixed top-0 left-sidebar-width right-0 h-16 z-40 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+      >
+        <div
+          class="h-16 w-full px-space-base flex items-center justify-between"
+        >
+          <div class="flex items-center gap-space-base min-w-0">
+            <img
+              alt="ClimateGuard AI Logo"
+              class="h-8 w-auto object-contain shrink-0"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1V1lI1iJbCNiuvXsM0FvB1OsQOEsyKX-Ca6QHOj2S10J-t4f5akbpC5QOwZwVfn0u4XJNCgGkRrQsqKAGLRiUsMLGlEb_6XTljxeCtL55XzkXAdhdlzakZ9IS7vC99N2LGHaWtLiXZQ7Y1FoP2zMkvGqpci9dIkzf64zZkum0auiqgf-79vKAUok5WDQ5CHkVbMs1Dz0bcyjQDamTm-kGQONd1E24RoX1Y1xNwTgxkMUZuXnhlnvAih_Q"
+            />
+            <div
+              class="flex items-center gap-space-xs font-badge-mono text-badge-mono tracking-wider truncate text-on-surface-variant"
+            >
+              <span class="hover:text-on-surface cursor-pointer"
+                >CLIMATEGURARD AI</span
+              ><span class="text-outline-variant">/</span
+              ><span
+                class="text-primary hover:text-primary-container cursor-pointer font-bold"
+                >INDIA</span
+              ><span class="text-outline-variant">/</span
+              ><span class="hover:text-on-surface cursor-pointer"
+                >RISK CONSOLE</span
+              ><span class="text-outline-variant">/</span
+              ><span
+                class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-bold"
+                >PROTOTYPE</span
+              >
+            </div>
+          </div>
+          <div class="flex items-center gap-space-base shrink-0">
+            <nav
+              class="hidden lg:flex items-center gap-1 bg-surface-container-low p-1 rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.02)]"
+              data-active-classes="bg-surface-container-highest text-primary font-semibold rounded-lg"
+            >
+              <a
+                class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                data-path="regional-india"
+                href="#"
+                >Integrated</a
+              ><a
+                class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                data-path="global-view"
+                href="#"
+                >3D Globe</a
+              ><a
+                class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                data-path="dashboard-analytics"
+                href="#"
+                >Dashboard</a
+              >
+            </nav>
+            <a
+              class="hidden sm:inline-flex items-center justify-center px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-colors"
+              data-path="research-dossier"
+              href="#"
+              >Research dossier</a
+            >
+            <div
+              class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-on-primary text-[18px]"
+                >person</span
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="relative w-full pt-16 bg-surface min-h-screen">
+        <div class="flex flex-col w-full">
+          <!-- Top Document Header Bar -->
+          <header
+            class="w-full bg-surface-container-low/70 backdrop-blur-md px-space-xl py-space-xl lg:px-space-3xl lg:py-space-2xl"
+          >
+            <div class="max-w-7xl mx-auto flex flex-col gap-space-lg">
+              <div
+                class="flex flex-wrap items-center justify-between gap-space-md"
+              >
+                <div class="flex flex-wrap items-center gap-space-xs">
+                  <span
+                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-primary font-badge-mono text-badge-mono uppercase"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Peer-Reviewed Synthesis
+                  </span>
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-badge-mono text-badge-mono"
+                  >
+                    V4.2 RELEASE
+                  </span>
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded-md bg-secondary-container/50 text-on-secondary-container font-badge-mono text-badge-mono"
+                  >
+                    UPDATED 2024 FEED
+                  </span>
+                  <span
+                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-outline font-badge-mono text-badge-mono"
+                  >
+                    <span class="material-symbols-outlined text-[12px]"
+                      >verified</span
+                    >
+                    DOI: 10.1038/CG-2024-089X
+                  </span>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <button
+                    class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container transition-all font-label-md text-label-md"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[16px] text-tertiary"
+                      >share</span
+                    >
+                    <span>Cite / BibTeX</span>
+                  </button>
+                  <button
+                    class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary shadow-sm transition-all font-label-md text-label-md"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >picture_as_pdf</span
+                    >
+                    <span>Download Full PDF (38 MB)</span>
+                  </button>
+                </div>
+              </div>
+              <div class="space-y-space-xs">
+                <div
+                  class="text-primary font-label-sm text-label-sm uppercase tracking-widest font-semibold flex items-center gap-2"
+                >
+                  <span>Climatic Risk Intelligence</span>
+                  <span class="text-outline-variant">/</span>
+                  <span>Technical Whitepaper Series 2024</span>
+                </div>
+                <h1
+                  class="font-display text-display text-on-surface tracking-tight max-w-4xl"
+                >
+                  Research Dossier: Multi-Hazard Climate Risk Methodology &amp;
+                  Literature Review
+                </h1>
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed"
+                >
+                  Synthesizing peer-reviewed climate models, empirical disaster
+                  telemetry, and high-resolution Earth Observation datasets
+                  across 8 authoritative scientific institutions.
+                </p>
+              </div>
+              <!-- Quick Metrics Ribbon -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-xs"
+              >
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Validated Empirical Events</span
+                  >
+                  <span class="font-display text-headline-lg text-primary mt-1"
+                    >1,240+</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mt-1"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >history_edu</span
+                    >
+                    1970–2024 Archive
+                  </span>
+                </div>
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Model Confidence Index</span
+                  >
+                  <span
+                    class="font-display text-headline-lg text-on-surface mt-1"
+                    >99.4%</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-primary flex items-center gap-1 mt-1"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >psychology</span
+                    >
+                    Ensemble Bayesian CMIP6
+                  </span>
+                </div>
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Spatial Resolution</span
+                  >
+                  <span class="font-display text-headline-lg text-tertiary mt-1"
+                    >1.2 km²</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-outline flex items-center gap-1 mt-1"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >grid_4x4</span
+                    >
+                    ISRO Sentinel-Downscaled
+                  </span>
+                </div>
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Academic Review Consensus</span
+                  >
+                  <span
+                    class="font-display text-headline-lg text-secondary mt-1"
+                    >8 / 8</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mt-1"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >verified_user</span
+                    >
+                    Cross-Standard Approved
+                  </span>
+                </div>
+              </div>
+            </div>
+          </header>
+          <!-- Main Grid Layout: Interactive TOC Sidebar + Content Body -->
+          <div
+            class="max-w-7xl mx-auto w-full px-space-base lg:px-space-3xl py-space-2xl grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-start"
+          >
+            <!-- Table of Contents Sticky Rail -->
+            <aside
+              class="hidden lg:flex lg:col-span-3 flex-col sticky top-24 gap-space-lg"
+            >
+              <div
+                class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-sm"
+              >
+                <div
+                  class="flex items-center gap-space-xs text-primary pb-space-2xs"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >account_tree</span
+                  >
+                  <span
+                    class="font-label-md text-label-md uppercase tracking-wider font-bold"
+                    >Contents</span
+                  >
+                </div>
+                <nav class="flex flex-col gap-1 text-on-surface-variant">
+                  <a
+                    class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-primary font-label-md text-label-md bg-surface-container-highest transition-colors"
+                    href="#exec-summary"
+                  >
+                    <span>1. Executive Synthesis</span>
+                    <span class="font-badge-mono text-badge-mono opacity-70"
+                      >p. 03</span
+                    >
+                  </a>
+                  <a
+                    class="flex items-center justify-between px-space-sm py-1.5 rounded-lg hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                    href="#hazard-formula"
+                  >
+                    <span>2. Quantitative Engine</span>
+                    <span class="font-badge-mono text-badge-mono opacity-70"
+                      >p. 09</span
+                    >
+                  </a>
+                  <a
+                    class="flex items-center justify-between px-space-sm py-1.5 rounded-lg hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                    href="#weight-distribution"
+                  >
+                    <span>3. Parameter Weightings</span>
+                    <span class="font-badge-mono text-badge-mono opacity-70"
+                      >p. 15</span
+                    >
+                  </a>
+                  <a
+                    class="flex items-center justify-between px-space-sm py-1.5 rounded-lg hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                    href="#literature-corpus"
+                  >
+                    <span>4. Authoritative Corpus</span>
+                    <span class="font-badge-mono text-badge-mono opacity-70"
+                      >p. 22</span
+                    >
+                  </a>
+                  <a
+                    class="flex items-center justify-between px-space-sm py-1.5 rounded-lg hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                    href="#case-studies"
+                  >
+                    <span>5. Disaster Benchmarks</span>
+                    <span class="font-badge-mono text-badge-mono opacity-70"
+                      >p. 31</span
+                    >
+                  </a>
+                </nav>
+              </div>
+              <!-- Lead Authors Card -->
+              <div
+                class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm"
+              >
+                <span
+                  class="font-label-sm text-label-sm text-outline uppercase tracking-wider"
+                  >Methodology Working Group</span
+                >
+                <div class="flex flex-col gap-space-sm">
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-headline-sm text-headline-sm"
+                    >
+                      R
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="font-label-md text-label-md text-on-surface"
+                        >Dr. Radhika Sen</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                        >Lead Climatologist, IPCC AR6 WG2 Contributor</span
+                      >
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-headline-sm text-headline-sm"
+                    >
+                      V
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="font-label-md text-label-md text-on-surface"
+                        >Prof. Vikram Rao</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                        >Director of GIS Geospatial Analytics, CEEW</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Scientific Disclaimer Notice -->
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/60 flex items-start gap-space-sm"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5"
+                  >info</span
+                >
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant leading-snug"
+                >
+                  Data inputs undergo double-blind bias correction utilizing
+                  NASA GPM and ESA Copernicus SAR telemetry feeds.
+                </p>
+              </div>
+            </aside>
+            <!-- Dossier Content Body -->
+            <main class="lg:col-span-9 flex flex-col gap-space-3xl">
+              <!-- Section 1: Executive Literature Review -->
+              <section
+                class="flex flex-col gap-space-base scroll-mt-24"
+                id="exec-summary"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-badge-mono text-badge-mono"
+                      >01 / OVERVIEW</span
+                    >
+                    <span class="text-outline-variant">•</span>
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                      >Analytical Framework</span
+                    >
+                  </div>
+                  <span class="font-badge-mono text-badge-mono text-outline"
+                    >READ TIME: 8 MIN</span
+                  >
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
+                >
+                  Executive Literature Review &amp; Synthesis Framework
+                </h2>
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+                >
+                  Climate risk modeling for the South Asian subcontinent has
+                  historically suffered from systemic fragmentation: atmospheric
+                  dynamics models operate at low resolution (25–50 km²), while
+                  vulnerability frameworks deployed by humanitarian agencies
+                  operate qualitatively at district or sub-district levels
+                  without synchronizing real-time satellite telemetry.
+                </p>
+                <!-- Quote Callout Card -->
+                <blockquote
+                  class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-sm relative overflow-hidden"
+                >
+                  <div
+                    class="absolute -right-4 -bottom-6 text-primary/10 select-none pointer-events-none"
+                  >
+                    <span class="material-symbols-outlined text-[130px]"
+                      >format_quote</span
+                    >
+                  </div>
+                  <p
+                    class="font-headline-sm text-headline-sm text-on-surface italic relative z-10 leading-snug"
+                  >
+                    “The intersection of thermodynamic sea-surface warming in
+                    the North Indian Ocean and intensification of continental
+                    heat domes creates compound cascade events that render
+                    single-variable hazard analysis dangerously obsolete.”
+                  </p>
+                  <div
+                    class="flex items-center gap-space-sm relative z-10 pt-space-xs"
+                  >
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    <span
+                      class="font-label-sm text-label-sm text-primary font-bold"
+                      >IPCC Working Group II Assessment Report (AR6), Chapter
+                      10: Asia</span
+                    >
+                  </div>
+                </blockquote>
+                <p
+                  class="font-body-md text-body-md text-on-surface leading-relaxed"
+                >
+                  The ClimateGuard AI framework bridges this operational
+                  disconnect by synthesizing three foundational pillars:
+                </p>
+                <!-- 3 Pillars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div
+                        class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary"
+                      >
+                        <span class="material-symbols-outlined text-[20px]"
+                          >air</span
+                        >
+                      </div>
+                      <h3
+                        class="font-headline-sm text-headline-sm text-on-surface"
+                      >
+                        Thermodynamic Models
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Coupled Model Intercomparison Project Phase 6 (CMIP6)
+                        downscaled dynamically via regional atmospheric models
+                        (WRF).
+                      </p>
+                    </div>
+                    <span class="font-badge-mono text-badge-mono text-tertiary"
+                      >IMD &amp; ECMWF Reanalysis</span
+                    >
+                  </div>
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div
+                        class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary"
+                      >
+                        <span class="material-symbols-outlined text-[20px]"
+                          >radar</span
+                        >
+                      </div>
+                      <h3
+                        class="font-headline-sm text-headline-sm text-on-surface"
+                      >
+                        Spatial Satellite Radar
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Synthetic Aperture Radar (SAR) microwave backscatter
+                        telemetry tracking soil saturation, inundation
+                        footprints, and vegetative stress.
+                      </p>
+                    </div>
+                    <span class="font-badge-mono text-badge-mono text-secondary"
+                      >ISRO Bhuvan &amp; Sentinel-1</span
+                    >
+                  </div>
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div
+                        class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container"
+                      >
+                        <span class="material-symbols-outlined text-[20px]"
+                          >apartment</span
+                        >
+                      </div>
+                      <h3
+                        class="font-headline-sm text-headline-sm text-on-surface"
+                      >
+                        Socio-Economic Exposure
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Gram Panchayat and ward-level census metrics
+                        incorporating housing stock resilience, electrical grid
+                        stability, and road egress viability.
+                      </p>
+                    </div>
+                    <span class="font-badge-mono text-badge-mono text-primary"
+                      >NDMA &amp; CEEW Data Bank</span
+                    >
+                  </div>
+                </div>
+              </section>
+              <!-- Section 2: Quantitative Hazard Profiling & Mathematical Engine -->
+              <section
+                class="flex flex-col gap-space-base scroll-mt-24"
+                id="hazard-formula"
+              >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-badge-mono text-badge-mono"
+                    >02 / MATHEMATICAL ARCHITECTURE</span
+                  >
+                  <span class="text-outline-variant">•</span>
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                    >Composite Risk Index</span
+                  >
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
+                >
+                  Algorithmic Formulation of Compound Vulnerability
+                </h2>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                >
+                  Standardized under the Sendai Framework for Disaster Risk
+                  Reduction and adapted for multi-temporal satellite feeds, the
+                  climate risk coefficient ($\mathcal{R}_{it}$) for geographic
+                  cell $i$ at time interval $t$ is formulated as an exponential
+                  interaction tensor:
+                </p>
+                <!-- Math Block Card -->
+                <div
+                  class="p-space-lg rounded-xl bg-surface-container shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-lg"
+                >
+                  <div class="flex flex-col gap-space-xs w-full">
+                    <span
+                      class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider"
+                      >Governing Formulation</span
+                    >
+                    <div
+                      class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm overflow-x-auto"
+                    >
+                      <code
+                        class="font-telemetry-data text-headline-sm text-on-surface tracking-wide select-all block py-1 font-semibold"
+                      >
+                        Risk_{i,t} = \left[ \frac{\mathcal{H}_{i,t} \times
+                        \mathcal{E}_{i} \times \mathcal{S}_{i}}{\mathcal{A}_{i}}
+                        \right]^{\gamma} \cdot \prod_{k=1}^{n} (1 + \omega_k
+                        \cdot \Delta_{k,i,t})
+                      </code>
+                    </div>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mt-1"
+                    >
+                      Where $\mathcal{H}$ represents Hazard Magnitude,
+                      $\mathcal{E}$ is Asset Exposure, $\mathcal{S}$ is Physical
+                      Sensitivity, and $\mathcal{A}$ is Localized Adaptive
+                      Capacity. $\omega_k$ measures non-linear tipping-point
+                      thresholds.
+                    </p>
+                  </div>
+                </div>
+                <!-- Section 3: Parameter Weights Distribution -->
+                <div
+                  class="flex flex-col gap-space-md pt-space-md"
+                  id="weight-distribution"
+                >
+                  <div class="flex items-center justify-between">
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Parameter Weighting &amp; Contribution Vectors
+                    </h3>
+                    <span
+                      class="font-badge-mono text-badge-mono text-on-surface-variant"
+                      >Normal Distribution ($\sum w_i = 100\%$)</span
+                    >
+                  </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-space-base">
+                    <!-- Parameter 1: Precipitation Variance -->
+                    <div
+                      class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm"
+                    >
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-space-xs">
+                          <span
+                            class="material-symbols-outlined text-primary text-[20px]"
+                            >rainy</span
+                          >
+                          <span
+                            class="font-headline-sm text-headline-sm text-on-surface"
+                            >Precipitation Variance</span
+                          >
+                        </div>
+                        <span
+                          class="font-headline-md text-headline-md text-primary font-bold"
+                          >30%</span
+                        >
+                      </div>
+                      <div class="w-full h-2 rounded-full bg-surface-container">
+                        <div
+                          class="h-full rounded-full bg-primary"
+                          style="width: 30%"
+                        ></div>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Departure from 50-year IMD monsoon baseline, 24-hour
+                        peak volume intensity ($P_{99}$), and antecedent soil
+                        saturation triggers.
+                      </p>
+                      <div
+                        class="flex items-center justify-between font-badge-mono text-badge-mono text-outline pt-space-2xs"
+                      >
+                        <span>SENSOR: GPM IMERG 0.1°</span>
+                        <span>LATENCY: 4h UPDATE</span>
+                      </div>
+                    </div>
+                    <!-- Parameter 2: Thermal Anomaly -->
+                    <div
+                      class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm"
+                    >
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-space-xs">
+                          <span
+                            class="material-symbols-outlined text-error text-[20px]"
+                            >thermostat</span
+                          >
+                          <span
+                            class="font-headline-sm text-headline-sm text-on-surface"
+                            >Thermal Anomaly ($T_{anomaly}$)</span
+                          >
+                        </div>
+                        <span
+                          class="font-headline-md text-headline-md text-error font-bold"
+                          >25%</span
+                        >
+                      </div>
+                      <div class="w-full h-2 rounded-full bg-surface-container">
+                        <div
+                          class="h-full rounded-full bg-error"
+                          style="width: 25%"
+                        ></div>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Wet-bulb globe temperature ($TW$) exceeding
+                        physiological thresholds (&gt;32°C), continuous heatwave
+                        streak length, and urban heat island (UHI)
+                        amplification.
+                      </p>
+                      <div
+                        class="flex items-center justify-between font-badge-mono text-badge-mono text-outline pt-space-2xs"
+                      >
+                        <span>SENSOR: MODIS LST &amp; ERA5</span>
+                        <span>LATENCY: 1h UPDATE</span>
+                      </div>
+                    </div>
+                    <!-- Parameter 3: Infrastructure Density -->
+                    <div
+                      class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm"
+                    >
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-space-xs">
+                          <span
+                            class="material-symbols-outlined text-tertiary text-[20px]"
+                            >hub</span
+                          >
+                          <span
+                            class="font-headline-sm text-headline-sm text-on-surface"
+                            >Infrastructure Vulnerability</span
+                          >
+                        </div>
+                        <span
+                          class="font-headline-md text-headline-md text-tertiary font-bold"
+                          >25%</span
+                        >
+                      </div>
+                      <div class="w-full h-2 rounded-full bg-surface-container">
+                        <div
+                          class="h-full rounded-full bg-tertiary"
+                          style="width: 25%"
+                        ></div>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Spatial concentration of critical civic assets, power
+                        transmission sub-stations within 100-year flood plains,
+                        and primary arterial road inundation vulnerability.
+                      </p>
+                      <div
+                        class="flex items-center justify-between font-badge-mono text-badge-mono text-outline pt-space-2xs"
+                      >
+                        <span>SOURCE: OpenStreetMap &amp; GIS-NIC</span>
+                        <span>LATENCY: 24h SYNC</span>
+                      </div>
+                    </div>
+                    <!-- Parameter 4: Soil Moisture Deficit -->
+                    <div
+                      class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm"
+                    >
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-space-xs">
+                          <span
+                            class="material-symbols-outlined text-secondary text-[20px]"
+                            >water_bottle</span
+                          >
+                          <span
+                            class="font-headline-sm text-headline-sm text-on-surface"
+                            >Soil Moisture Deficit</span
+                          >
+                        </div>
+                        <span
+                          class="font-headline-md text-headline-md text-secondary font-bold"
+                          >20%</span
+                        >
+                      </div>
+                      <div class="w-full h-2 rounded-full bg-surface-container">
+                        <div
+                          class="h-full rounded-full bg-secondary"
+                          style="width: 20%"
+                        ></div>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Root-zone moisture content (SMAP L4) below the 10th
+                        percentile for agricultural vegetative growth, tracking
+                        progressive meteorological-to-agricultural drought
+                        transition.
+                      </p>
+                      <div
+                        class="flex items-center justify-between font-badge-mono text-badge-mono text-outline pt-space-2xs"
+                      >
+                        <span>SENSOR: NASA SMAP 9km</span>
+                        <span>LATENCY: 12h UPDATE</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- Section 4: 8-Source Academic References Corpus -->
+              <section
+                class="flex flex-col gap-space-base scroll-mt-24"
+                id="literature-corpus"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-badge-mono text-badge-mono"
+                      >03 / EVIDENCE BASE</span
+                    >
+                    <span class="text-outline-variant">•</span>
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                      >Peer-Reviewed Literature</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button
+                      class="px-2.5 py-1 rounded bg-primary text-on-primary font-badge-mono text-badge-mono"
+                      id="filter-all"
+                    >
+                      ALL (8)
+                    </button>
+                    <button
+                      class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-badge-mono text-badge-mono"
+                      id="filter-clim"
+                    >
+                      CLIMATOLOGY
+                    </button>
+                    <button
+                      class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-badge-mono text-badge-mono"
+                      id="filter-pol"
+                    >
+                      GOV / POLICY
+                    </button>
+                  </div>
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
+                >
+                  Authoritative Literature Corpus &amp; Integration Index
+                </h2>
+                <div class="flex flex-col gap-space-sm" id="citation-list">
+                  <!-- Source 1: IPCC AR6 -->
+                  <article
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-xs group"
+                    data-category="clim"
+                  >
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-xs"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-badge-mono text-badge-mono"
+                          >[REF-01]</span
+                        >
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-semibold"
+                          >Intergovernmental Panel on Climate Change
+                          (IPCC)</span
+                        >
+                        <span
+                          class="w-1 h-1 rounded-full bg-outline-variant"
+                        ></span>
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >2023 Synthesis Report</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 font-badge-mono text-badge-mono text-secondary"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >check_circle</span
+                        >
+                        ACTIVE MODEL FEED
+                      </span>
+                    </div>
+                    <h4
+                      class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      AR6 Climate Change 2023: Synthesis Report. Contribution of
+                      Working Groups I, II and III to the Sixth Assessment
+                      Report
+                    </h4>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Provides the global Shared Socioeconomic Pathways
+                      (SSP2-4.5 and SSP5-8.5) carbon trajectory constraints
+                      utilized in ClimateGuard’s forward looking 2030–2050
+                      localized projections.
+                    </p>
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-sm pt-space-2xs"
+                    >
+                      <div
+                        class="flex items-center gap-space-xs font-badge-mono text-badge-mono text-outline"
+                      >
+                        <span>IMPACT FACTOR: 18.2</span>
+                        <span>•</span>
+                        <span>CITATIONS: 4,120</span>
+                        <span>•</span>
+                        <span>PEER REVIEW: BLIND</span>
+                      </div>
+                      <a
+                        class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm hover:underline"
+                        href="#"
+                      >
+                        <span>View DOI metadata</span>
+                        <span class="material-symbols-outlined text-[14px]"
+                          >open_in_new</span
+                        >
+                      </a>
+                    </div>
+                  </article>
+                  <!-- Source 2: IMD Monsoon Monograph -->
+                  <article
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-xs group"
+                    data-category="gov"
+                  >
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-xs"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-badge-mono text-badge-mono"
+                          >[REF-02]</span
+                        >
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-semibold"
+                          >India Meteorological Department (IMD)</span
+                        >
+                        <span
+                          class="w-1 h-1 rounded-full bg-outline-variant"
+                        ></span>
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Monsoon Monograph No. 28</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 font-badge-mono text-badge-mono text-secondary"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >check_circle</span
+                        >
+                        HISTORICAL RADAR BASELINE
+                      </span>
+                    </div>
+                    <h4
+                      class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      Decadal Shifts in High-Intensity Short-Duration Monsoonal
+                      Cloudbursts Across Central India (1901–2022)
+                    </h4>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Provides the multi-decadal historical rainfall baseline
+                      for calibrating flood frequency curves and identifying
+                      urban pluvial exceedance levels.
+                    </p>
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-sm pt-space-2xs"
+                    >
+                      <div
+                        class="flex items-center gap-space-xs font-badge-mono text-badge-mono text-outline"
+                      >
+                        <span>TYPE: STATISTICAL REPORT</span>
+                        <span>•</span>
+                        <span>STATIONS: 3,450 GAUGES</span>
+                        <span>•</span>
+                        <span>STATUS: BENCHMARKED</span>
+                      </div>
+                      <a
+                        class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm hover:underline"
+                        href="#"
+                      >
+                        <span>IMD Technical Archive</span>
+                        <span class="material-symbols-outlined text-[14px]"
+                          >open_in_new</span
+                        >
+                      </a>
+                    </div>
+                  </article>
+                  <!-- Source 3: Nature Climate Change 2023 -->
+                  <article
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-xs group"
+                    data-category="clim"
+                  >
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-xs"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-badge-mono text-badge-mono"
+                          >[REF-03]</span
+                        >
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-semibold"
+                          >Nature Climate Change</span
+                        >
+                        <span
+                          class="w-1 h-1 rounded-full bg-outline-variant"
+                        ></span>
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Vol 13, Issue 7 (2023)</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 font-badge-mono text-badge-mono text-secondary"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >check_circle</span
+                        >
+                        ANOMALY LOGIC
+                      </span>
+                    </div>
+                    <h4
+                      class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      South Asian Monsoonal Circulation Shifts Under Arabian Sea
+                      Rapid Thermal Expansion
+                    </h4>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Identifies that marine heatwaves in the Arabian Sea are
+                      fueling a 52% increase in post-monsoon cyclonic intensity
+                      and rapid landfall acceleration along the
+                      Gujarat-Maharashtra shoreline.
+                    </p>
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-sm pt-space-2xs"
+                    >
+                      <div
+                        class="flex items-center gap-space-xs font-badge-mono text-badge-mono text-outline"
+                      >
+                        <span>IMPACT FACTOR: 30.7</span>
+                        <span>•</span>
+                        <span>STATUS: SYNTHESIZED</span>
+                        <span>•</span>
+                        <span>DOI: 10.1038/s41558-023-01684-w</span>
+                      </div>
+                      <a
+                        class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm hover:underline"
+                        href="#"
+                      >
+                        <span>Read Full Article</span>
+                        <span class="material-symbols-outlined text-[14px]"
+                          >open_in_new</span
+                        >
+                      </a>
+                    </div>
+                  </article>
+                  <!-- Source 4: NDMA Flood Guidelines -->
+                  <article
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-xs group"
+                    data-category="gov"
+                  >
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-xs"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-badge-mono text-badge-mono"
+                          >[REF-04]</span
+                        >
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-semibold"
+                          >National Disaster Management Authority (NDMA)</span
+                        >
+                        <span
+                          class="w-1 h-1 rounded-full bg-outline-variant"
+                        ></span>
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Operational Directives</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 font-badge-mono text-badge-mono text-primary"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >checklist</span
+                        >
+                        PROTOCOL COMPLIANT
+                      </span>
+                    </div>
+                    <h4
+                      class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      National Guidelines for the Management of Urban Flooding
+                      and Flash Flood Early Warning Integrations
+                    </h4>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Defines standard municipal evacuation zoning, reservoir
+                      discharge alert thresholds, and critical health
+                      infrastructure protection mandates.
+                    </p>
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-sm pt-space-2xs"
+                    >
+                      <div
+                        class="flex items-center gap-space-xs font-badge-mono text-badge-mono text-outline"
+                      >
+                        <span>TYPE: REGULATORY FRAMEWORK</span>
+                        <span>•</span>
+                        <span>APPLICABILITY: NATIONWIDE</span>
+                      </div>
+                      <a
+                        class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm hover:underline"
+                        href="#"
+                      >
+                        <span>NDMA Circular PDF</span>
+                        <span class="material-symbols-outlined text-[14px]"
+                          >open_in_new</span
+                        >
+                      </a>
+                    </div>
+                  </article>
+                  <!-- Source 5: CEEW Climate Vulnerability Index -->
+                  <article
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-xs group"
+                    data-category="pol"
+                  >
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-xs"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-badge-mono text-badge-mono"
+                          >[REF-05]</span
+                        >
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-semibold"
+                          >Council on Energy, Environment and Water (CEEW)</span
+                        >
+                        <span
+                          class="w-1 h-1 rounded-full bg-outline-variant"
+                        ></span>
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Special Report</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 font-badge-mono text-badge-mono text-secondary"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >check_circle</span
+                        >
+                        WEIGHT VECTOR ANCHOR
+                      </span>
+                    </div>
+                    <h4
+                      class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      Mapping India's Climate Vulnerability: A District-Level
+                      Climate Vulnerability Assessment
+                    </h4>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Provides the empirical basis for sensitivity weighting
+                      ($\mathcal{S}$), proving that over 75% of Indian districts
+                      are extreme climate event hotspots.
+                    </p>
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-sm pt-space-2xs"
+                    >
+                      <div
+                        class="flex items-center gap-space-xs font-badge-mono text-badge-mono text-outline"
+                      >
+                        <span>640 DISTRICTS ANALYZED</span>
+                        <span>•</span>
+                        <span>CVI INDEX 2021</span>
+                      </div>
+                      <a
+                        class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm hover:underline"
+                        href="#"
+                      >
+                        <span>CEEW Report Portal</span>
+                        <span class="material-symbols-outlined text-[14px]"
+                          >open_in_new</span
+                        >
+                      </a>
+                    </div>
+                  </article>
+                  <!-- Source 6: ISRO Bhuvan Services -->
+                  <article
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-xs group"
+                    data-category="clim"
+                  >
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-xs"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-badge-mono text-badge-mono"
+                          >[REF-06]</span
+                        >
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-semibold"
+                          >ISRO National Remote Sensing Centre (NRSC)</span
+                        >
+                        <span
+                          class="w-1 h-1 rounded-full bg-outline-variant"
+                        ></span>
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Bhuvan Platform</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 font-badge-mono text-badge-mono text-secondary"
+                      >
+                        <span class="material-symbols-outlined text-[14px]"
+                          >sensors</span
+                        >
+                        LIVE RASTER FEED
+                      </span>
+                    </div>
+                    <h4
+                      class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      Multi-Mission Earth Observation Disaster Support System:
+                      Real-Time Inundation &amp; Landslide Scar Ingestion
+                    </h4>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Direct telemetry interface feeding Cartosat DEMs and
+                      RISAT-1A SAR spatial vectors into the high-resolution
+                      topographic exposure layers.
+                    </p>
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-sm pt-space-2xs"
+                    >
+                      <div
+                        class="flex items-center gap-space-xs font-badge-mono text-badge-mono text-outline"
+                      >
+                        <span>TELEMETRY: CARTOSAT + RISAT</span>
+                        <span>•</span>
+                        <span>REFRESH: SUB-DAILY</span>
+                      </div>
+                      <a
+                        class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm hover:underline"
+                        href="#"
+                      >
+                        <span>Bhuvan Geospatial API</span>
+                        <span class="material-symbols-outlined text-[14px]"
+                          >open_in_new</span
+                        >
+                      </a>
+                    </div>
+                  </article>
+                  <!-- Source 7: WMO State of Global Climate -->
+                  <article
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-xs group"
+                    data-category="clim"
+                  >
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-xs"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-badge-mono text-badge-mono"
+                          >[REF-07]</span
+                        >
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-semibold"
+                          >World Meteorological Organization (WMO)</span
+                        >
+                        <span
+                          class="w-1 h-1 rounded-full bg-outline-variant"
+                        ></span>
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >WMO-No. 1316</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 font-badge-mono text-badge-mono text-outline"
+                      >
+                        GLOBAL REFERENCE
+                      </span>
+                    </div>
+                    <h4
+                      class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      State of the Global Climate 2023: South Asian Regional
+                      Weather Extrema &amp; Cryosphere Recession
+                    </h4>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Tracks the accelerated retreat of Himalayan glacier volume
+                      and the subsequent downstream outburst flood (GLOF) hazard
+                      amplification vectors.
+                    </p>
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-sm pt-space-2xs"
+                    >
+                      <div
+                        class="flex items-center gap-space-xs font-badge-mono text-badge-mono text-outline"
+                      >
+                        <span>HIMALAYAN GLOF RISKS</span>
+                        <span>•</span>
+                        <span>WMO TECHNICAL PAPERS</span>
+                      </div>
+                      <a
+                        class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm hover:underline"
+                        href="#"
+                      >
+                        <span>WMO Publication Repository</span>
+                        <span class="material-symbols-outlined text-[14px]"
+                          >open_in_new</span
+                        >
+                      </a>
+                    </div>
+                  </article>
+                  <!-- Source 8: Reserve Bank of India Climate Stress -->
+                  <article
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-xs group"
+                    data-category="gov"
+                  >
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-xs"
+                    >
+                      <div class="flex items-center gap-space-xs">
+                        <span
+                          class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-badge-mono text-badge-mono"
+                          >[REF-08]</span
+                        >
+                        <span
+                          class="font-label-md text-label-md text-on-surface font-semibold"
+                          >Reserve Bank of India (RBI)</span
+                        >
+                        <span
+                          class="w-1 h-1 rounded-full bg-outline-variant"
+                        ></span>
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Report on Currency and Finance (RCF)</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 font-badge-mono text-badge-mono text-primary"
+                      >
+                        FINANCIAL BENCHMARK
+                      </span>
+                    </div>
+                    <h4
+                      class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      Towards a Greener Future: Macroeconomic Stress Testing of
+                      Climate Change Physical Risks on Indian Banking Assets
+                    </h4>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Provides the quantitative conversion formulas translating
+                      environmental risk indices ($\mathcal{R}_{it}$) into
+                      anticipated physical damage loss ratios and credit default
+                      probabilities.
+                    </p>
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-sm pt-space-2xs"
+                    >
+                      <div
+                        class="flex items-center gap-space-xs font-badge-mono text-badge-mono text-outline"
+                      >
+                        <span>SECTOR: MACROPRUDENTIAL</span>
+                        <span>•</span>
+                        <span>FISCAL HORIZON: 2030-2050</span>
+                      </div>
+                      <a
+                        class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm hover:underline"
+                        href="#"
+                      >
+                        <span>RBI Bulletin Reference</span>
+                        <span class="material-symbols-outlined text-[14px]"
+                          >open_in_new</span
+                        >
+                      </a>
+                    </div>
+                  </article>
+                </div>
+              </section>
+              <!-- Section 5: Interactive Disaster Profiles with Case Studies -->
+              <section
+                class="flex flex-col gap-space-base scroll-mt-24"
+                id="case-studies"
+              >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-badge-mono text-badge-mono"
+                    >04 / EMPIRICAL BENCHMARKS</span
+                  >
+                  <span class="text-outline-variant">•</span>
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                    >Historical Case Studies</span
+                  >
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
+                >
+                  Retrospective Model Validation on Major Disasters
+                </h2>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                >
+                  ClimateGuard AI backtests its predictive algorithms against
+                  ground-truth observational telemetry from significant
+                  historical events to verify precision, lead-time efficacy, and
+                  spatial accuracy.
+                </p>
+                <!-- Case Studies Tabs / Selector Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                  <!-- Case 1: 2018 Kerala Floods -->
+                  <div
+                    class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-base hover:shadow-md transition-shadow"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-badge-mono text-badge-mono"
+                          >HYDROLOGICAL</span
+                        >
+                        <span
+                          class="font-badge-mono text-badge-mono text-outline"
+                          >AUG 2018</span
+                        >
+                      </div>
+                      <h3
+                        class="font-headline-sm text-headline-sm text-on-surface mt-1"
+                      >
+                        2018 Kerala Deluge &amp; Dam Spill Cascades
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        164% above normal rainfall over 18 days leading to
+                        synchronous release across 35 major dams in the Periyar
+                        and Pamba river basins.
+                      </p>
+                    </div>
+                    <!-- Mini Data Visual Graphic -->
+                    <div
+                      class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-2xs"
+                    >
+                      <div
+                        class="flex items-center justify-between text-body-sm font-label-sm"
+                      >
+                        <span class="text-on-surface-variant"
+                          >Peak 48-hr Deficit Anomaly</span
+                        >
+                        <span class="text-primary font-bold font-telemetry-data"
+                          >+414 mm</span
+                        >
+                      </div>
+                      <div
+                        class="w-full h-1.5 rounded-full bg-surface-container"
+                      >
+                        <div
+                          class="h-full rounded-full bg-primary"
+                          style="width: 88%"
+                        ></div>
+                      </div>
+                      <div
+                        class="flex items-center justify-between font-badge-mono text-badge-mono text-outline pt-1"
+                      >
+                        <span>MODEL LEAD TIME: 72h ADVANCE</span>
+                        <span class="text-secondary font-bold"
+                          >96.8% ACCURACY</span
+                        >
+                      </div>
+                    </div>
+                    <div class="pt-space-2xs">
+                      <div
+                        class="text-primary font-label-md text-label-md flex items-center gap-1 cursor-pointer hover:underline"
+                      >
+                        <span>Review Inundation Reconstruction</span>
+                        <span class="material-symbols-outlined text-[16px]"
+                          >arrow_forward</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Case 2: 2023 Cyclone Biparjoy -->
+                  <div
+                    class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-base hover:shadow-md transition-shadow"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-badge-mono text-badge-mono"
+                          >CYCLONIC / SURGE</span
+                        >
+                        <span
+                          class="font-badge-mono text-badge-mono text-outline"
+                          >JUN 2023</span
+                        >
+                      </div>
+                      <h3
+                        class="font-headline-sm text-headline-sm text-on-surface mt-1"
+                      >
+                        2023 Cyclone Biparjoy (Arabian Sea)
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Longest-lived cyclone in the Arabian Sea (13 days),
+                        displaying anomalous rapid intensification fueled by
+                        31°C sea surface temperatures.
+                      </p>
+                    </div>
+                    <!-- Mini Data Visual Graphic -->
+                    <div
+                      class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-2xs"
+                    >
+                      <div
+                        class="flex items-center justify-between text-body-sm font-label-sm"
+                      >
+                        <span class="text-on-surface-variant"
+                          >Sustained Wind Peak</span
+                        >
+                        <span
+                          class="text-secondary font-bold font-telemetry-data"
+                          >165 km/h (Cat 3)</span
+                        >
+                      </div>
+                      <div
+                        class="w-full h-1.5 rounded-full bg-surface-container"
+                      >
+                        <div
+                          class="h-full rounded-full bg-secondary"
+                          style="width: 79%"
+                        ></div>
+                      </div>
+                      <div
+                        class="flex items-center justify-between font-badge-mono text-badge-mono text-outline pt-1"
+                      >
+                        <span>LANDFALL DEV: &lt;14 KM</span>
+                        <span class="text-secondary font-bold"
+                          >ZERO CASUALTY NDMA</span
+                        >
+                      </div>
+                    </div>
+                    <div class="pt-space-2xs">
+                      <div
+                        class="text-primary font-label-md text-label-md flex items-center gap-1 cursor-pointer hover:underline"
+                      >
+                        <span>Review Trajectory Simulation</span>
+                        <span class="material-symbols-outlined text-[16px]"
+                          >arrow_forward</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Case 3: 2024 North India Heatwave -->
+                  <div
+                    class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-base hover:shadow-md transition-shadow"
+                  >
+                    <div class="flex flex-col gap-space-xs">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="px-2 py-0.5 rounded bg-error text-on-error font-badge-mono text-badge-mono"
+                          >THERMAL EXTREME</span
+                        >
+                        <span
+                          class="font-badge-mono text-badge-mono text-outline"
+                          >MAY–JUN 2024</span
+                        >
+                      </div>
+                      <h3
+                        class="font-headline-sm text-headline-sm text-on-surface mt-1"
+                      >
+                        2024 North India Multi-Week Heat Dome
+                      </h3>
+                      <p
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                      >
+                        Historic daytime peaks touching 50.5°C across Delhi-NCR
+                        and Rajasthan, compounded by night-time heat indices
+                        exceeding critical human survival thresholds.
+                      </p>
+                    </div>
+                    <!-- Mini Data Visual Graphic -->
+                    <div
+                      class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-2xs"
+                    >
+                      <div
+                        class="flex items-center justify-between text-body-sm font-label-sm"
+                      >
+                        <span class="text-on-surface-variant"
+                          >Peak Wet-Bulb Exceedance</span
+                        >
+                        <span class="text-error font-bold font-telemetry-data"
+                          >33.8°C TW</span
+                        >
+                      </div>
+                      <div
+                        class="w-full h-1.5 rounded-full bg-surface-container"
+                      >
+                        <div
+                          class="h-full rounded-full bg-error"
+                          style="width: 95%"
+                        ></div>
+                      </div>
+                      <div
+                        class="flex items-center justify-between font-badge-mono text-badge-mono text-outline pt-1"
+                      >
+                        <span>HEAT DURATION: 28 DAYS</span>
+                        <span class="text-primary font-bold"
+                          >GRID STRESS +34%</span
+                        >
+                      </div>
+                    </div>
+                    <div class="pt-space-2xs">
+                      <div
+                        class="text-primary font-label-md text-label-md flex items-center gap-1 cursor-pointer hover:underline"
+                      >
+                        <span>Inspect Urban Heat Island Map</span>
+                        <span class="material-symbols-outlined text-[16px]"
+                          >arrow_forward</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Deep Dive Card: Kerala Floods Detailed Inundation Profile -->
+                <div
+                  class="mt-space-md p-space-xl rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-lg"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm"
+                  >
+                    <div class="flex items-center gap-space-sm">
+                      <div
+                        class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center"
+                      >
+                        <span class="material-symbols-outlined text-[24px]"
+                          >analytics</span
+                        >
+                      </div>
+                      <div>
+                        <h3
+                          class="font-headline-md text-headline-md text-on-surface"
+                        >
+                          Case Deep Dive: Spatial Water Balance Simulation
+                        </h3>
+                        <span
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                          >Reconstructed using ClimateGuard Hydro-Engine v4.2
+                          vs. On-Site Gauge Telemetry</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="font-badge-mono text-badge-mono text-primary bg-surface-container-highest px-3 py-1 rounded-full uppercase"
+                    >
+                      CONFIDENCE INTERVAL: 95%
+                    </span>
+                  </div>
+                  <!-- Comparative Data Table -->
+                  <div class="overflow-x-auto">
+                    <table
+                      class="w-full text-left font-body-sm text-body-sm text-on-surface"
+                    >
+                      <thead>
+                        <tr
+                          class="bg-surface-container-high/50 font-label-sm text-label-sm text-on-surface-variant"
+                        >
+                          <th class="py-2.5 px-space-md">HYDROLOGICAL BASIN</th>
+                          <th class="py-2.5 px-space-md">
+                            OBSERVED INFLOW (CUMECS)
+                          </th>
+                          <th class="py-2.5 px-space-md">MODEL PREDICTED</th>
+                          <th class="py-2.5 px-space-md">
+                            VARIANCE ($\delta$)
+                          </th>
+                          <th class="py-2.5 px-space-md">
+                            INUNDATION CLASSIFICATION
+                          </th>
+                          <th class="py-2.5 px-space-md text-right">
+                            PEAK RISK RATING
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y-0">
+                        <tr
+                          class="hover:bg-surface-container transition-colors"
+                        >
+                          <td class="py-3 px-space-md font-semibold">
+                            Idukki Catchment
+                          </td>
+                          <td class="py-3 px-space-md font-telemetry-data">
+                            1,520 m³/s
+                          </td>
+                          <td class="py-3 px-space-md font-telemetry-data">
+                            1,488 m³/s
+                          </td>
+                          <td
+                            class="py-3 px-space-md font-telemetry-data text-secondary"
+                          >
+                            -2.1%
+                          </td>
+                          <td class="py-3 px-space-md">
+                            <span
+                              class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container text-on-error-container font-badge-mono text-badge-mono font-semibold"
+                              >CATASTROPHIC</span
+                            >
+                          </td>
+                          <td
+                            class="py-3 px-space-md text-right font-headline-sm text-headline-sm text-error"
+                          >
+                            9.8 / 10
+                          </td>
+                        </tr>
+                        <tr
+                          class="hover:bg-surface-container transition-colors"
+                        >
+                          <td class="py-3 px-space-md font-semibold">
+                            Periyar Downstream
+                          </td>
+                          <td class="py-3 px-space-md font-telemetry-data">
+                            2,140 m³/s
+                          </td>
+                          <td class="py-3 px-space-md font-telemetry-data">
+                            2,205 m³/s
+                          </td>
+                          <td
+                            class="py-3 px-space-md font-telemetry-data text-primary"
+                          >
+                            +3.0%
+                          </td>
+                          <td class="py-3 px-space-md">
+                            <span
+                              class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container text-on-error-container font-badge-mono text-badge-mono font-semibold"
+                              >SEVERE OVERTOPPING</span
+                            >
+                          </td>
+                          <td
+                            class="py-3 px-space-md text-right font-headline-sm text-headline-sm text-error"
+                          >
+                            9.4 / 10
+                          </td>
+                        </tr>
+                        <tr
+                          class="hover:bg-surface-container transition-colors"
+                        >
+                          <td class="py-3 px-space-md font-semibold">
+                            Pamba Estuary
+                          </td>
+                          <td class="py-3 px-space-md font-telemetry-data">
+                            940 m³/s
+                          </td>
+                          <td class="py-3 px-space-md font-telemetry-data">
+                            915 m³/s
+                          </td>
+                          <td
+                            class="py-3 px-space-md font-telemetry-data text-secondary"
+                          >
+                            -2.6%
+                          </td>
+                          <td class="py-3 px-space-md">
+                            <span
+                              class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-highest text-primary font-badge-mono text-badge-mono font-semibold"
+                              >ELEVATED FLUSH</span
+                            >
+                          </td>
+                          <td
+                            class="py-3 px-space-md text-right font-headline-sm text-headline-sm text-tertiary"
+                          >
+                            7.9 / 10
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Bottom Summary Strip inside Case Study -->
+                  <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-space-sm pt-space-xs"
+                  >
+                    <div
+                      class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[18px] text-secondary"
+                        >verified</span
+                      >
+                      <span
+                        >Model demonstrated a 3.4-hour warning horizon advantage
+                        over traditional stream gauges.</span
+                      >
+                    </div>
+                    <button
+                      class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container transition-all font-label-md text-label-md"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >file_download</span
+                      >
+                      <span>Export Raw Hydrograph CSV</span>
+                    </button>
+                  </div>
+                </div>
+              </section>
+              <!-- Section 6: Document Audit & Citation Footer Banner -->
+              <footer
+                class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-lg"
+              >
+                <div class="flex flex-col gap-space-xs max-w-xl">
+                  <div
+                    class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm font-bold uppercase tracking-wider"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >security_update_good</span
+                    >
+                    <span>Continuous Peer Verification Engine</span>
+                  </div>
+                  <p
+                    class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                  >
+                    This technical dossier is automatically validated on a
+                    bi-monthly cycle against newly indexed publications in
+                    Scopus, Nature Publishing Group, and the IMD Science
+                    Bulletin.
+                  </p>
+                  <span class="font-badge-mono text-badge-mono text-outline">
+                    HASH: 8f2a1b94c307e5e1a • VERIFIED BY CLIMATEGURARD AI
+                    RESEARCH CONSORTIUM
+                  </span>
+                </div>
+                <div class="flex items-center gap-space-sm shrink-0">
+                  <button
+                    class="px-space-lg py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors"
+                  >
+                    Request Methodology Briefing
+                  </button>
+                  <button
+                    class="px-space-lg py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-colors flex items-center gap-1.5"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >download</span
+                    >
+                    <span>Download All 8 Papers</span>
+                  </button>
+                </div>
+              </footer>
+            </main>
+          </div>
+        </div>
+        <script>
+          // Simple interactive filter for the 8 academic references
+          const filterAll = document.getElementById("filter-all");
+          const filterClim = document.getElementById("filter-clim");
+          const filterPol = document.getElementById("filter-pol");
+          const articles = document.querySelectorAll("#citation-list article");
+
+          function updateActiveBtn(activeBtn) {
+            [filterAll, filterClim, filterPol].forEach((btn) => {
+              btn.classList.remove("bg-primary", "text-on-primary");
+              btn.classList.add(
+                "bg-surface-container",
+                "text-on-surface-variant",
+              );
+            });
+            activeBtn.classList.remove(
+              "bg-surface-container",
+              "text-on-surface-variant",
+            );
+            activeBtn.classList.add("bg-primary", "text-on-primary");
+          }
+
+          if (filterAll && filterClim && filterPol) {
+            filterAll.addEventListener("click", () => {
+              updateActiveBtn(filterAll);
+              articles.forEach((art) => (art.style.display = "flex"));
+            });
+
+            filterClim.addEventListener("click", () => {
+              updateActiveBtn(filterClim);
+              articles.forEach((art) => {
+                if (art.dataset.category === "clim") {
+                  art.style.display = "flex";
+                } else {
+                  art.style.display = "none";
+                }
+              });
+            });
+
+            filterPol.addEventListener("click", () => {
+              updateActiveBtn(filterPol);
+              articles.forEach((art) => {
+                if (
+                  art.dataset.category === "gov" ||
+                  art.dataset.category === "pol"
+                ) {
+                  art.style.display = "flex";
+                } else {
+                  art.style.display = "none";
+                }
+              });
+            });
+          }
+        </script>
+      </main>
+    </div>
+  </body>
+</html>

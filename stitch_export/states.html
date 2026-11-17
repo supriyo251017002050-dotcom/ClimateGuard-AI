@@ -1,0 +1,1786 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#89f5e7",
+              "outline-variant": "#c1c6d5",
+              surface: "#f8f9ff",
+              "on-secondary-fixed-variant": "#005049",
+              "on-primary-fixed-variant": "#00458e",
+              "on-tertiary-fixed-variant": "#004b73",
+              primary: "#004e9f",
+              "on-tertiary-container": "#d8ebff",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#0b1c30",
+              "primary-fixed-dim": "#aac7ff",
+              "tertiary-fixed-dim": "#93ccff",
+              "surface-container-highest": "#d3e4fe",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#aac7ff",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f8f9ff",
+              "surface-container-low": "#eff4ff",
+              "secondary-fixed-dim": "#6bd8cb",
+              "surface-dim": "#cbdbf5",
+              "surface-container-high": "#dce9ff",
+              "on-secondary-container": "#006f66",
+              "primary-container": "#0066cc",
+              "on-secondary-fixed": "#00201d",
+              secondary: "#006a61",
+              "primary-fixed": "#d7e3ff",
+              "on-surface": "#0b1c30",
+              "on-tertiary-fixed": "#001d31",
+              tertiary: "#005582",
+              "on-surface-variant": "#414753",
+              "surface-tint": "#005cba",
+              "inverse-surface": "#213145",
+              "on-error-container": "#93000a",
+              "surface-variant": "#d3e4fe",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#eaf1ff",
+              "on-primary-container": "#dfe8ff",
+              "surface-container": "#e5eeff",
+              outline: "#727784",
+              background: "#f8f9ff",
+              "tertiary-container": "#006ea7",
+              "secondary-container": "#86f2e4",
+              error: "#ba1a1a",
+              "on-primary-fixed": "#001b3e",
+              "tertiary-fixed": "#cce5ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-lg": "1.25rem",
+              "space-2xs": "0.125rem",
+              "telemetry-panel-width": "22rem",
+              "space-xs": "0.25rem",
+              "space-xl": "1.5rem",
+              "space-base": "1rem",
+              "gutter-grid": "1rem",
+              "sidebar-width": "16.25rem",
+              "space-3xl": "3rem",
+              "space-sm": "0.5rem",
+              "space-md": "0.75rem",
+              "space-2xl": "2rem",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "badge-mono": ["Geist"],
+              "headline-md": ["Geist"],
+              display: ["Geist"],
+              "telemetry-data": ["Geist"],
+              "body-sm": ["Inter"],
+              "label-md": ["Geist"],
+              "body-md": ["Inter"],
+              "headline-sm": ["Geist"],
+              "label-sm": ["Geist"],
+              "headline-lg-mobile": ["Geist"],
+              "headline-lg": ["Geist"],
+            },
+            fontSize: {
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "badge-mono": [
+                "10px",
+                {
+                  lineHeight: "12px",
+                  letterSpacing: "0.06em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              display: [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.025em",
+                  fontWeight: "600",
+                },
+              ],
+              "telemetry-data": [
+                "13px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "headline-sm": [
+                "16px",
+                {
+                  lineHeight: "24px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "22px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-surface font-body-md text-body-md text-on-surface antialiased"
+  >
+    <aside
+      class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between select-none"
+    >
+      <div class="flex flex-col">
+        <div
+          class="h-16 px-space-base flex items-center gap-space-sm bg-surface-container-low"
+        >
+          <div
+            class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >shield_with_heart</span
+            >
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight"
+              >ClimateGuard AI</span
+            ><span
+              class="font-label-sm text-label-sm text-primary uppercase tracking-widest mt-0.5"
+              >Risk intelligence</span
+            >
+          </div>
+        </div>
+        <div class="px-space-base py-space-xs">
+          <div
+            class="flex items-center justify-between px-space-sm py-space-2xs rounded-lg bg-surface-container-highest/60"
+          >
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"
+              ></span
+              ><span
+                class="font-badge-mono text-badge-mono uppercase text-secondary font-bold tracking-wider"
+                >Operational Feed</span
+              >
+            </div>
+            <span
+              class="font-badge-mono text-badge-mono text-on-surface-variant"
+              >v4.8</span
+            >
+          </div>
+        </div>
+        <nav
+          class="px-space-sm pt-space-xs flex flex-col gap-1"
+          data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"
+        >
+          <a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="home"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">home</span
+            ><span class="font-label-md text-label-md">Home</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="global-view"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">public</span
+            ><span class="font-label-md text-label-md">Global view</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="regional-india"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">pin_drop</span
+            ><span class="font-label-md text-label-md"
+              >India / Regional</span
+            ></a
+          ><a
+            aria-current="page"
+            class="flex items-center gap-space-md px-space-md py-2.5 transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg"
+            data-path="states-breakdown"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">layers</span
+            ><span class="font-label-md text-label-md">States</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="dashboard-analytics"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]"
+              >query_stats</span
+            ><span class="font-label-md text-label-md">Dashboard</span></a
+          ><a
+            class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+            data-path="research-dossier"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">menu_book</span
+            ><span class="font-label-md text-label-md"
+              >Research dossier</span
+            ></a
+          >
+        </nav>
+      </div>
+      <div
+        class="p-space-base flex flex-col gap-space-base bg-surface-container-low"
+      >
+        <div
+          class="p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-space-sm"
+        >
+          <div class="flex items-center gap-space-xs text-primary">
+            <span class="material-symbols-outlined text-[16px]"
+              >auto_read_play</span
+            ><span
+              class="font-label-sm text-label-sm font-bold uppercase tracking-wider"
+              >Synthesis Review</span
+            >
+          </div>
+          <p
+            class="font-body-sm text-body-sm text-on-surface-variant leading-snug"
+          >
+            Full report: 8-source literature review, methodology, and disaster
+            profiles.
+          </p>
+          <a
+            class="w-full flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors"
+            data-path="research-dossier"
+            href="#"
+            ><span class="material-symbols-outlined text-[16px]"
+              >arrow_forward</span
+            ><span>Open dossier</span></a
+          >
+        </div>
+        <div class="flex items-center justify-between px-space-xs pt-space-xs">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[18px] text-secondary"
+              >light_mode</span
+            ><span class="font-label-sm text-label-sm text-on-surface-variant"
+              >Mode: Light</span
+            >
+          </div>
+          <div
+            class="flex items-center p-0.5 rounded-full bg-surface-container"
+          >
+            <button
+              aria-label="Active Light Mode"
+              class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-primary font-badge-mono text-badge-mono shadow-sm"
+              type="button"
+            >
+              LIGHT</button
+            ><button
+              aria-label="Dark Mode Inactive"
+              class="px-2 py-0.5 rounded-full text-outline font-badge-mono text-badge-mono hover:text-on-surface"
+              type="button"
+            >
+              DARK
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="pl-sidebar-width">
+      <header
+        class="fixed top-0 left-sidebar-width right-0 h-16 z-40 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+      >
+        <div
+          class="h-16 w-full px-space-base flex items-center justify-between"
+        >
+          <div class="flex items-center gap-space-base min-w-0">
+            <img
+              alt="ClimateGuard AI Logo"
+              class="h-8 w-auto object-contain shrink-0"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1V1lI1iJbCNiuvXsM0FvB1OsQOEsyKX-Ca6QHOj2S10J-t4f5akbpC5QOwZwVfn0u4XJNCgGkRrQsqKAGLRiUsMLGlEb_6XTljxeCtL55XzkXAdhdlzakZ9IS7vC99N2LGHaWtLiXZQ7Y1FoP2zMkvGqpci9dIkzf64zZkum0auiqgf-79vKAUok5WDQ5CHkVbMs1Dz0bcyjQDamTm-kGQONd1E24RoX1Y1xNwTgxkMUZuXnhlnvAih_Q"
+            />
+            <div
+              class="flex items-center gap-space-xs font-badge-mono text-badge-mono tracking-wider truncate text-on-surface-variant"
+            >
+              <span class="hover:text-on-surface cursor-pointer"
+                >CLIMATEGURARD AI</span
+              ><span class="text-outline-variant">/</span
+              ><span
+                class="text-primary hover:text-primary-container cursor-pointer font-bold"
+                >INDIA</span
+              ><span class="text-outline-variant">/</span
+              ><span class="hover:text-on-surface cursor-pointer"
+                >RISK CONSOLE</span
+              ><span class="text-outline-variant">/</span
+              ><span
+                class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-bold"
+                >PROTOTYPE</span
+              >
+            </div>
+          </div>
+          <div class="flex items-center gap-space-base shrink-0">
+            <nav
+              class="hidden lg:flex items-center gap-1 bg-surface-container-low p-1 rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.02)]"
+              data-active-classes="bg-surface-container-highest text-primary font-semibold rounded-lg"
+            >
+              <a
+                class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                data-path="regional-india"
+                href="#"
+                >Integrated</a
+              ><a
+                class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                data-path="global-view"
+                href="#"
+                >3D Globe</a
+              ><a
+                class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors"
+                data-path="dashboard-analytics"
+                href="#"
+                >Dashboard</a
+              >
+            </nav>
+            <a
+              class="hidden sm:inline-flex items-center justify-center px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-colors"
+              data-path="research-dossier"
+              href="#"
+              >Research dossier</a
+            >
+            <div
+              class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-on-primary text-[18px]"
+                >person</span
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="relative w-full pt-16 bg-surface min-h-screen">
+        <div class="flex flex-col w-full">
+          <div
+            class="px-space-base py-space-md lg:px-space-xl lg:py-space-lg flex flex-col gap-space-lg"
+          >
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm"
+            >
+              <div class="flex flex-col gap-space-2xs min-w-0">
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-badge-mono text-badge-mono uppercase"
+                    >Geospatial Telemetry</span
+                  >
+                  <span
+                    class="text-outline-variant font-badge-mono text-badge-mono"
+                    >·</span
+                  >
+                  <span
+                    class="font-badge-mono text-badge-mono text-on-surface-variant uppercase"
+                    >Sub-National Assessment Model</span
+                  >
+                </div>
+                <h1
+                  class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
+                >
+                  State Vulnerability Matrix &amp; Territorial Risk Mapping
+                </h1>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant max-w-3xl"
+                >
+                  High-resolution risk indexes for Indian states and Union
+                  Territories synthesized across 24 years of extreme climate
+                  telemetry, hydrologic surge records, and municipal adaptation
+                  posture.
+                </p>
+              </div>
+              <div class="flex items-center gap-space-sm shrink-0">
+                <button
+                  class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors shadow-sm"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >sim_card_download</span
+                  >
+                  <span>GeoJSON Export</span>
+                </button>
+                <button
+                  class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-sm"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >publish</span
+                  >
+                  <span>NDMA Dossier PDF</span>
+                </button>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+              <div
+                class="flex flex-col bg-surface-container-lowest p-space-md rounded-xl shadow-sm"
+              >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                  >National Avg Risk Score</span
+                >
+                <div class="flex items-baseline gap-space-xs mt-1">
+                  <span
+                    class="font-display text-display font-headline-lg text-primary tracking-tight"
+                    >67.4</span
+                  >
+                  <span
+                    class="font-badge-mono text-badge-mono text-error font-semibold"
+                    >+2.8% YoY</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-surface-container-highest h-1.5 rounded-full mt-3 overflow-hidden"
+                >
+                  <div
+                    class="bg-primary h-full rounded-full"
+                    style="width: 67.4%"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="flex flex-col bg-surface-container-lowest p-space-md rounded-xl shadow-sm"
+              >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                  >Critical Exposure Tier</span
+                >
+                <div class="flex items-baseline gap-space-xs mt-1">
+                  <span
+                    class="font-display text-display font-headline-lg text-error tracking-tight"
+                    >8</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >States &gt; 75.0</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-surface-container-highest h-1.5 rounded-full mt-3 overflow-hidden"
+                >
+                  <div
+                    class="bg-error h-full rounded-full"
+                    style="width: 28%"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="flex flex-col bg-surface-container-lowest p-space-md rounded-xl shadow-sm"
+              >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                  >Early Warning Density</span
+                >
+                <div class="flex items-baseline gap-space-xs mt-1">
+                  <span
+                    class="font-display text-display font-headline-lg text-secondary tracking-tight"
+                    >1,420</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-secondary font-medium"
+                    >99.4% Online</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-surface-container-highest h-1.5 rounded-full mt-3 overflow-hidden"
+                >
+                  <div
+                    class="bg-secondary h-full rounded-full"
+                    style="width: 99.4%"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="flex flex-col bg-surface-container-lowest p-space-md rounded-xl shadow-sm"
+              >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                  >Adaptation Fiscal Ratio</span
+                >
+                <div class="flex items-baseline gap-space-xs mt-1">
+                  <span
+                    class="font-display text-display font-headline-lg text-on-surface tracking-tight"
+                    >₹48.2k</span
+                  >
+                  <span class="font-badge-mono text-badge-mono text-tertiary"
+                    >Cr. Allocated</span
+                  >
+                </div>
+                <div
+                  class="w-full bg-surface-container-highest h-1.5 rounded-full mt-3 overflow-hidden"
+                >
+                  <div
+                    class="bg-tertiary h-full rounded-full"
+                    style="width: 62%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm bg-surface-container-low p-space-sm rounded-xl"
+            >
+              <div
+                class="flex-1 flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-2 rounded-lg shadow-sm"
+              >
+                <span class="material-symbols-outlined text-[20px] text-outline"
+                  >search</span
+                >
+                <input
+                  class="w-full bg-transparent font-body-sm text-body-sm text-on-surface focus:outline-none placeholder:text-outline"
+                  id="stateSearchInput"
+                  placeholder="Filter territory or coastal district (e.g., Odisha, Bihar, Puri)..."
+                  type="text"
+                />
+                <span
+                  class="font-badge-mono text-badge-mono text-outline-variant bg-surface-container-high px-1.5 py-0.5 rounded"
+                  >⌘K</span
+                >
+              </div>
+              <div class="flex flex-wrap items-center gap-space-xs">
+                <div
+                  class="flex items-center gap-1 bg-surface-container-lowest p-1 rounded-lg shadow-sm"
+                >
+                  <button
+                    class="hazard-filter px-3 py-1 rounded-md text-primary font-label-sm text-label-sm bg-primary-fixed"
+                    data-hazard="all"
+                  >
+                    All Hazards
+                  </button>
+                  <button
+                    class="hazard-filter px-3 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm"
+                    data-hazard="cyclone"
+                  >
+                    Cyclone
+                  </button>
+                  <button
+                    class="hazard-filter px-3 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm"
+                    data-hazard="flood"
+                  >
+                    Flood
+                  </button>
+                  <button
+                    class="hazard-filter px-3 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm"
+                    data-hazard="heat"
+                  >
+                    Heatwave
+                  </button>
+                  <button
+                    class="hazard-filter px-3 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm"
+                    data-hazard="drought"
+                  >
+                    Drought
+                  </button>
+                </div>
+                <div
+                  class="flex items-center gap-space-xs bg-surface-container-lowest px-3 py-2 rounded-lg shadow-sm"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >Tier:</span
+                  >
+                  <select
+                    class="bg-transparent font-label-sm text-label-sm text-on-surface focus:outline-none cursor-pointer"
+                    id="tierFilter"
+                  >
+                    <option value="all">All Risk Levels</option>
+                    <option value="critical">Critical (&gt;80)</option>
+                    <option value="heightened">Heightened (70-80)</option>
+                    <option value="moderate">Moderate (&lt;70)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start"
+            >
+              <div class="xl:col-span-8 flex flex-col gap-space-base">
+                <div
+                  class="relative w-full rounded-xl overflow-hidden shadow-sm bg-surface-container-lowest"
+                >
+                  <div
+                    class="w-full h-72 bg-cover bg-center"
+                    data-location="Bhubaneswar, Odisha, India"
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCM8i5FfItFsxT_fe-unTSTdZ6qDZ5dqK6P6AkwzH-OtH_ty5IMJB8hrC8CHflzETeSxoU2ImovfY-qW1oglT0b2VBJbbW8_TvvRhTYG2nJH-PYKVMmE7xrOUci2yMHvHZ7aGGtzpF8yCM73oYqfJW_A8A6K_u1csep1-rqw9zPIS4mzPyDZS1AOWBdj0IvH1qboeU7NgP5SGcgPsJv5C1CfxlfG9s5KrIVhppT0X8OTFOvq7Hse5WY&quot;);
+                    "
+                  ></div>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-inverse-surface/30 to-transparent flex flex-col justify-end p-space-lg"
+                  >
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-space-base"
+                    >
+                      <div class="flex flex-col text-inverse-on-surface">
+                        <div class="flex items-center gap-space-xs">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"
+                          ></span>
+                          <span
+                            class="font-badge-mono text-badge-mono tracking-wider uppercase text-error-container font-bold"
+                            >High Surge Surveillance Zone</span
+                          >
+                        </div>
+                        <span
+                          class="font-headline-md text-headline-md font-semibold text-inverse-on-surface"
+                          >Bay of Bengal &amp; Eastern Littoral Threat
+                          Vector</span
+                        >
+                        <p
+                          class="font-body-sm text-body-sm text-inverse-on-surface/80 max-w-xl"
+                        >
+                          Supercomputing ensemble indicates early low-pressure
+                          genesis near North Andaman Sea. Multi-satellite
+                          altimetry feeding autonomous telemetry nodes.
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-space-sm">
+                        <div
+                          class="px-space-md py-2 rounded-lg bg-surface-container-lowest/20 backdrop-blur-md text-inverse-on-surface flex flex-col items-center"
+                        >
+                          <span
+                            class="font-badge-mono text-badge-mono text-on-primary-container"
+                            >CYCLONE READINESS</span
+                          >
+                          <span
+                            class="font-headline-sm text-headline-sm font-bold"
+                            >Tier 1 Active</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden"
+                >
+                  <div
+                    class="px-space-lg py-space-md bg-surface-container-lowest flex items-center justify-between"
+                  >
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="material-symbols-outlined text-[20px] text-primary"
+                        >analytics</span
+                      >
+                      <h2
+                        class="font-headline-sm text-headline-sm text-on-surface"
+                      >
+                        Sub-National Vulnerability Hierarchy
+                      </h2>
+                    </div>
+                    <span
+                      class="font-badge-mono text-badge-mono text-on-surface-variant"
+                      >5 of 36 JURISDICTIONS VISIBLE</span
+                    >
+                  </div>
+                  <div class="overflow-x-auto">
+                    <table class="w-full text-left" id="stateMatrixTable">
+                      <thead>
+                        <tr
+                          class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm"
+                        >
+                          <th class="py-3 px-space-base">
+                            Rank &amp; Jurisdiction
+                          </th>
+                          <th class="py-3 px-space-base">
+                            Vulnerability Score
+                          </th>
+                          <th class="py-3 px-space-base">
+                            Primary Hazard &amp; Velocity
+                          </th>
+                          <th class="py-3 px-space-base">Institutional Prep</th>
+                          <th class="py-3 px-space-base text-right">
+                            Surge Protocol
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody
+                        class="font-body-md text-body-md divide-y-0"
+                        id="matrixTableBody"
+                      >
+                        <tr
+                          class="state-row cursor-pointer transition-colors bg-surface-container-highest/40 hover:bg-surface-container-highest/70"
+                          data-hazard="cyclone"
+                          data-state="odisha"
+                          data-tier="critical"
+                        >
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-sm">
+                              <span
+                                class="w-6 h-6 rounded-md bg-primary-container text-on-primary flex items-center justify-center font-badge-mono text-badge-mono"
+                                >01</span
+                              >
+                              <div class="flex flex-col">
+                                <span
+                                  class="font-headline-sm text-headline-sm text-on-surface leading-tight"
+                                  >Odisha</span
+                                >
+                                <span
+                                  class="font-label-sm text-label-sm text-on-surface-variant"
+                                  >Eastern Littoral · 480km Coastline</span
+                                >
+                              </div>
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-sm">
+                              <span
+                                class="font-headline-sm text-headline-sm text-error font-bold font-telemetry-data"
+                                >88.6</span
+                              >
+                              <div
+                                class="w-20 bg-surface-container-high h-2 rounded-full overflow-hidden"
+                              >
+                                <div
+                                  class="bg-error h-full rounded-full"
+                                  style="width: 88.6%"
+                                ></div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex flex-col">
+                              <div class="flex items-center gap-1.5">
+                                <span
+                                  class="w-2 h-2 rounded-full bg-error"
+                                ></span>
+                                <span
+                                  class="font-label-md text-label-md text-on-surface"
+                                  >Tropical Cyclones &amp; Inundation</span
+                                >
+                              </div>
+                              <span
+                                class="font-body-sm text-body-sm text-on-surface-variant"
+                                >34 Cat-3+ Cyclones since 2000</span
+                              >
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-xs">
+                              <div
+                                class="w-16 bg-surface-container-high h-1.5 rounded-full overflow-hidden"
+                              >
+                                <div
+                                  class="bg-secondary h-full rounded-full"
+                                  style="width: 76%"
+                                ></div>
+                              </div>
+                              <span
+                                class="font-badge-mono text-badge-mono text-secondary font-bold"
+                                >76%</span
+                              >
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base text-right">
+                            <button
+                              class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-sm text-label-sm transition-colors"
+                            >
+                              <span>Inspect</span>
+                              <span
+                                class="material-symbols-outlined text-[16px]"
+                                >chevron_right</span
+                              >
+                            </button>
+                          </td>
+                        </tr>
+                        <tr
+                          class="state-row cursor-pointer transition-colors hover:bg-surface-container-highest/50"
+                          data-hazard="flood"
+                          data-state="bihar"
+                          data-tier="critical"
+                        >
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-sm">
+                              <span
+                                class="w-6 h-6 rounded-md bg-surface-container-highest text-on-surface font-badge-mono text-badge-mono"
+                                >02</span
+                              >
+                              <div class="flex flex-col">
+                                <span
+                                  class="font-headline-sm text-headline-sm text-on-surface leading-tight"
+                                  >Bihar</span
+                                >
+                                <span
+                                  class="font-label-sm text-label-sm text-on-surface-variant"
+                                  >Middle Gangetic Plain · Transboundary
+                                  Basin</span
+                                >
+                              </div>
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-sm">
+                              <span
+                                class="font-headline-sm text-headline-sm text-error font-bold font-telemetry-data"
+                                >86.2</span
+                              >
+                              <div
+                                class="w-20 bg-surface-container-high h-2 rounded-full overflow-hidden"
+                              >
+                                <div
+                                  class="bg-error h-full rounded-full"
+                                  style="width: 86.2%"
+                                ></div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex flex-col">
+                              <div class="flex items-center gap-1.5">
+                                <span
+                                  class="w-2 h-2 rounded-full bg-error"
+                                ></span>
+                                <span
+                                  class="font-label-md text-label-md text-on-surface"
+                                  >Monsoonal Floods &amp; Riverbank Shift</span
+                                >
+                              </div>
+                              <span
+                                class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Kosi &amp; Gandak Basin Flash Exposure</span
+                              >
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-xs">
+                              <div
+                                class="w-16 bg-surface-container-high h-1.5 rounded-full overflow-hidden"
+                              >
+                                <div
+                                  class="bg-error h-full rounded-full"
+                                  style="width: 58%"
+                                ></div>
+                              </div>
+                              <span
+                                class="font-badge-mono text-badge-mono text-error font-bold"
+                                >58%</span
+                              >
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base text-right">
+                            <button
+                              class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-sm text-label-sm transition-colors"
+                            >
+                              <span>Inspect</span>
+                              <span
+                                class="material-symbols-outlined text-[16px]"
+                                >chevron_right</span
+                              >
+                            </button>
+                          </td>
+                        </tr>
+                        <tr
+                          class="state-row cursor-pointer transition-colors hover:bg-surface-container-highest/50"
+                          data-hazard="heat"
+                          data-state="rajasthan"
+                          data-tier="critical"
+                        >
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-sm">
+                              <span
+                                class="w-6 h-6 rounded-md bg-surface-container-highest text-on-surface font-badge-mono text-badge-mono"
+                                >03</span
+                              >
+                              <div class="flex flex-col">
+                                <span
+                                  class="font-headline-sm text-headline-sm text-on-surface leading-tight"
+                                  >Rajasthan</span
+                                >
+                                <span
+                                  class="font-label-sm text-label-sm text-on-surface-variant"
+                                  >Thar Arid Zone · Aquifer Stress</span
+                                >
+                              </div>
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-sm">
+                              <span
+                                class="font-headline-sm text-headline-sm text-error font-bold font-telemetry-data"
+                                >83.1</span
+                              >
+                              <div
+                                class="w-20 bg-surface-container-high h-2 rounded-full overflow-hidden"
+                              >
+                                <div
+                                  class="bg-error h-full rounded-full"
+                                  style="width: 83.1%"
+                                ></div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex flex-col">
+                              <div class="flex items-center gap-1.5">
+                                <span
+                                  class="w-2 h-2 rounded-full bg-error"
+                                ></span>
+                                <span
+                                  class="font-label-md text-label-md text-on-surface"
+                                  >Extreme Thermal Stress &amp; Depletion</span
+                                >
+                              </div>
+                              <span
+                                class="font-body-sm text-body-sm text-on-surface-variant"
+                                >49.8°C Record Peaks in Churu Belt</span
+                              >
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-xs">
+                              <div
+                                class="w-16 bg-surface-container-high h-1.5 rounded-full overflow-hidden"
+                              >
+                                <div
+                                  class="bg-tertiary h-full rounded-full"
+                                  style="width: 64%"
+                                ></div>
+                              </div>
+                              <span
+                                class="font-badge-mono text-badge-mono text-tertiary font-bold"
+                                >64%</span
+                              >
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base text-right">
+                            <button
+                              class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-sm text-label-sm transition-colors"
+                            >
+                              <span>Inspect</span>
+                              <span
+                                class="material-symbols-outlined text-[16px]"
+                                >chevron_right</span
+                              >
+                            </button>
+                          </td>
+                        </tr>
+                        <tr
+                          class="state-row cursor-pointer transition-colors hover:bg-surface-container-highest/50"
+                          data-hazard="flood"
+                          data-state="kerala"
+                          data-tier="heightened"
+                        >
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-sm">
+                              <span
+                                class="w-6 h-6 rounded-md bg-surface-container-highest text-on-surface font-badge-mono text-badge-mono"
+                                >04</span
+                              >
+                              <div class="flex flex-col">
+                                <span
+                                  class="font-headline-sm text-headline-sm text-on-surface leading-tight"
+                                  >Kerala</span
+                                >
+                                <span
+                                  class="font-label-sm text-label-sm text-on-surface-variant"
+                                  >Western Ghats Flank · Riparian
+                                  Corridors</span
+                                >
+                              </div>
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-sm">
+                              <span
+                                class="font-headline-sm text-headline-sm text-tertiary font-bold font-telemetry-data"
+                                >79.4</span
+                              >
+                              <div
+                                class="w-20 bg-surface-container-high h-2 rounded-full overflow-hidden"
+                              >
+                                <div
+                                  class="bg-tertiary h-full rounded-full"
+                                  style="width: 79.4%"
+                                ></div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex flex-col">
+                              <div class="flex items-center gap-1.5">
+                                <span
+                                  class="w-2 h-2 rounded-full bg-tertiary"
+                                ></span>
+                                <span
+                                  class="font-label-md text-label-md text-on-surface"
+                                  >Landslides &amp; Extreme Cloudbursts</span
+                                >
+                              </div>
+                              <span
+                                class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Wayanad &amp; Idukki Hill Tract
+                                Saturation</span
+                              >
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-xs">
+                              <div
+                                class="w-16 bg-surface-container-high h-1.5 rounded-full overflow-hidden"
+                              >
+                                <div
+                                  class="bg-secondary h-full rounded-full"
+                                  style="width: 81%"
+                                ></div>
+                              </div>
+                              <span
+                                class="font-badge-mono text-badge-mono text-secondary font-bold"
+                                >81%</span
+                              >
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base text-right">
+                            <button
+                              class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-sm text-label-sm transition-colors"
+                            >
+                              <span>Inspect</span>
+                              <span
+                                class="material-symbols-outlined text-[16px]"
+                                >chevron_right</span
+                              >
+                            </button>
+                          </td>
+                        </tr>
+                        <tr
+                          class="state-row cursor-pointer transition-colors hover:bg-surface-container-highest/50"
+                          data-hazard="drought"
+                          data-state="maharashtra"
+                          data-tier="heightened"
+                        >
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-sm">
+                              <span
+                                class="w-6 h-6 rounded-md bg-surface-container-highest text-on-surface font-badge-mono text-badge-mono"
+                                >05</span
+                              >
+                              <div class="flex flex-col">
+                                <span
+                                  class="font-headline-sm text-headline-sm text-on-surface leading-tight"
+                                  >Maharashtra</span
+                                >
+                                <span
+                                  class="font-label-sm text-label-sm text-on-surface-variant"
+                                  >Konkan Coast &amp; Marathwada Agrarian
+                                  Core</span
+                                >
+                              </div>
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-sm">
+                              <span
+                                class="font-headline-sm text-headline-sm text-tertiary font-bold font-telemetry-data"
+                                >76.8</span
+                              >
+                              <div
+                                class="w-20 bg-surface-container-high h-2 rounded-full overflow-hidden"
+                              >
+                                <div
+                                  class="bg-tertiary h-full rounded-full"
+                                  style="width: 76.8%"
+                                ></div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex flex-col">
+                              <div class="flex items-center gap-1.5">
+                                <span
+                                  class="w-2 h-2 rounded-full bg-tertiary"
+                                ></span>
+                                <span
+                                  class="font-label-md text-label-md text-on-surface"
+                                  >Urban Surge Flooding &amp; Agrarian
+                                  Drought</span
+                                >
+                              </div>
+                              <span
+                                class="font-body-sm text-body-sm text-on-surface-variant"
+                                >Mumbai Sea Rise + Vidarbha Soil Deficit</span
+                              >
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base">
+                            <div class="flex items-center gap-space-xs">
+                              <div
+                                class="w-16 bg-surface-container-high h-1.5 rounded-full overflow-hidden"
+                              >
+                                <div
+                                  class="bg-secondary h-full rounded-full"
+                                  style="width: 79%"
+                                ></div>
+                              </div>
+                              <span
+                                class="font-badge-mono text-badge-mono text-secondary font-bold"
+                                >79%</span
+                              >
+                            </div>
+                          </td>
+                          <td class="py-3.5 px-space-base text-right">
+                            <button
+                              class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-sm text-label-sm transition-colors"
+                            >
+                              <span>Inspect</span>
+                              <span
+                                class="material-symbols-outlined text-[16px]"
+                                >chevron_right</span
+                              >
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div
+                    class="px-space-base py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-xs"
+                  >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                      >Updated hourly from IMD, INCOIS, and Copernicus Sentinel
+                      constellation feeds.</span
+                    >
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="font-badge-mono text-badge-mono text-on-surface-variant"
+                        >PAGE 1 OF 7</span
+                      >
+                      <button
+                        class="w-7 h-7 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm hover:bg-surface-container"
+                      >
+                        <span class="material-symbols-outlined text-[16px]"
+                          >chevron_left</span
+                        >
+                      </button>
+                      <button
+                        class="w-7 h-7 rounded bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm hover:bg-surface-container"
+                      >
+                        <span class="material-symbols-outlined text-[16px]"
+                          >chevron_right</span
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                  <div
+                    class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                        >Adaptive Resilience Benchmark</span
+                      >
+                      <span
+                        class="font-badge-mono text-badge-mono text-primary bg-primary-fixed px-1.5 py-0.5 rounded"
+                        >Composite Index</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-space-base my-1">
+                      <div
+                        class="relative w-20 h-20 flex items-center justify-center"
+                      >
+                        <svg
+                          class="w-full h-full transform -rotate-90"
+                          viewbox="0 0 36 36"
+                        >
+                          <path
+                            class="text-surface-container-highest"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3.5"
+                          ></path>
+                          <path
+                            class="text-primary"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-dasharray="78, 100"
+                            stroke-linecap="round"
+                            stroke-width="3.5"
+                          ></path>
+                        </svg>
+                        <div class="absolute flex flex-col items-center">
+                          <span
+                            class="font-headline-sm text-headline-sm font-bold text-on-surface"
+                            >78%</span
+                          >
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-1 min-w-0">
+                        <span
+                          class="font-headline-sm text-headline-sm text-on-surface"
+                          >Early Warning Coverage</span
+                        >
+                        <p
+                          class="font-body-sm text-body-sm text-on-surface-variant"
+                        >
+                          92% of vulnerable populations in top 5 states are
+                          within a 30-minute siren &amp; SMS cell broadcast
+                          reach.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                        >Critical Hazard Composition</span
+                      >
+                      <span
+                        class="font-badge-mono text-badge-mono text-secondary bg-secondary-container px-1.5 py-0.5 rounded"
+                        >Frequency 2024</span
+                      >
+                    </div>
+                    <div class="flex items-end gap-2 h-20 pt-2">
+                      <div
+                        class="flex-1 flex flex-col items-center gap-1 h-full justify-end"
+                      >
+                        <span
+                          class="font-badge-mono text-badge-mono text-on-surface-variant"
+                          >42%</span
+                        >
+                        <div
+                          class="w-full bg-error rounded-t"
+                          style="height: 84%"
+                        ></div>
+                        <span
+                          class="font-badge-mono text-badge-mono text-on-surface-variant uppercase"
+                          >Cycl</span
+                        >
+                      </div>
+                      <div
+                        class="flex-1 flex flex-col items-center gap-1 h-full justify-end"
+                      >
+                        <span
+                          class="font-badge-mono text-badge-mono text-on-surface-variant"
+                          >28%</span
+                        >
+                        <div
+                          class="w-full bg-primary rounded-t"
+                          style="height: 56%"
+                        ></div>
+                        <span
+                          class="font-badge-mono text-badge-mono text-on-surface-variant uppercase"
+                          >Flod</span
+                        >
+                      </div>
+                      <div
+                        class="flex-1 flex flex-col items-center gap-1 h-full justify-end"
+                      >
+                        <span
+                          class="font-badge-mono text-badge-mono text-on-surface-variant"
+                          >18%</span
+                        >
+                        <div
+                          class="w-full bg-secondary rounded-t"
+                          style="height: 36%"
+                        ></div>
+                        <span
+                          class="font-badge-mono text-badge-mono text-on-surface-variant uppercase"
+                          >Heat</span
+                        >
+                      </div>
+                      <div
+                        class="flex-1 flex flex-col items-center gap-1 h-full justify-end"
+                      >
+                        <span
+                          class="font-badge-mono text-badge-mono text-on-surface-variant"
+                          >12%</span
+                        >
+                        <div
+                          class="w-full bg-tertiary rounded-t"
+                          style="height: 24%"
+                        ></div>
+                        <span
+                          class="font-badge-mono text-badge-mono text-on-surface-variant uppercase"
+                          >Drgt</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="xl:col-span-4 flex flex-col gap-space-base">
+                <div
+                  class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md"
+                >
+                  <div class="flex items-center justify-between pb-space-xs">
+                    <div class="flex items-center gap-space-xs">
+                      <span
+                        class="w-2 h-2 rounded-full bg-error animate-ping"
+                      ></span>
+                      <span
+                        class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider"
+                        >Territorial Deep Dive</span
+                      >
+                    </div>
+                    <span
+                      class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-badge-mono text-badge-mono font-bold"
+                      >STATE SCORE: 88.6</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-space-2xs">
+                    <h3
+                      class="font-headline-lg text-headline-lg text-on-surface"
+                      id="inspectorTitle"
+                    >
+                      Odisha Coastal Risk Profile
+                    </h3>
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                      id="inspectorSubtitle"
+                      >Zone: North-West Bay of Bengal Cyclonic Flank</span
+                    >
+                  </div>
+                  <div
+                    class="w-full h-40 rounded-xl overflow-hidden shadow-sm relative"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      data-alt="Satellite radar view of coastal Odisha India showing Bay of Bengal cyclone storm tracks, mangrove buffers along coastline, atmospheric telemetry data overlays, scientific clean light mode palette."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAseknE9ZcRjbertNBmPcE1vtF2JBICrUpejFbl1GL8ooFDk9WpEz9teXK7gNs2MiUCRtvZLVhoog7AuaCm7NfA5c5K_oj-YpbYdWLPqi1sV-UMTYLnrfeVReNVJBKYvJtuFSQ3ylgnDEd49QZGVGKYYi0u7nYb8i03pqw5vEA0gtU8xY5C2ejFOVybNM2EH2goXoMqULKKXMrLqRAGWpTEOBRewstP629Fkc9k27sQCZ2X3ZrePArc"
+                    />
+                    <div
+                      class="absolute bottom-2 left-2 bg-surface-container-lowest/80 backdrop-blur-sm px-2 py-1 rounded text-on-surface font-badge-mono text-badge-mono"
+                    >
+                      RADAR: C-BAND INSAT-3DR
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-space-xs">
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                        >Historical Disaster Incidence (2000–2024)</span
+                      >
+                      <span
+                        class="font-badge-mono text-badge-mono text-on-surface-variant"
+                        >38 Major Catastrophes</span
+                      >
+                    </div>
+                    <div
+                      class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-2"
+                    >
+                      <div
+                        class="flex items-center justify-between text-on-surface font-body-sm text-body-sm"
+                      >
+                        <span>Severe Cyclones (Cat 3+)</span>
+                        <span
+                          class="font-badge-mono text-badge-mono font-bold text-error"
+                          >19 Events</span
+                        >
+                      </div>
+                      <div
+                        class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden"
+                      >
+                        <div
+                          class="bg-error h-full rounded-full"
+                          style="width: 72%"
+                        ></div>
+                      </div>
+                      <div
+                        class="flex items-center justify-between text-on-surface font-body-sm text-body-sm"
+                      >
+                        <span>Storm Surge Inundations</span>
+                        <span
+                          class="font-badge-mono text-badge-mono font-bold text-primary"
+                          >12 Events</span
+                        >
+                      </div>
+                      <div
+                        class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden"
+                      >
+                        <div
+                          class="bg-primary h-full rounded-full"
+                          style="width: 48%"
+                        ></div>
+                      </div>
+                      <div
+                        class="flex items-center justify-between text-on-surface font-body-sm text-body-sm"
+                      >
+                        <span>Flash Flooding &amp; River Breach</span>
+                        <span
+                          class="font-badge-mono text-badge-mono font-bold text-secondary"
+                          >7 Events</span
+                        >
+                      </div>
+                      <div
+                        class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden"
+                      >
+                        <div
+                          class="bg-secondary h-full rounded-full"
+                          style="width: 28%"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-space-xs">
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                      >District-Level Vulnerability Heat</span
+                    >
+                    <div class="flex flex-col gap-2">
+                      <div
+                        class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors"
+                      >
+                        <div class="flex items-center gap-space-sm">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-error"
+                          ></span>
+                          <div class="flex flex-col">
+                            <span
+                              class="font-label-md text-label-md text-on-surface font-semibold"
+                              >Puri</span
+                            >
+                            <span
+                              class="font-body-sm text-body-sm text-on-surface-variant"
+                              >Littoral Exposure: Very High</span
+                            >
+                          </div>
+                        </div>
+                        <span
+                          class="font-badge-mono text-badge-mono font-bold text-error bg-error-container/60 px-2 py-0.5 rounded"
+                          >93.4 RISK</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors"
+                      >
+                        <div class="flex items-center gap-space-sm">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-error"
+                          ></span>
+                          <div class="flex flex-col">
+                            <span
+                              class="font-label-md text-label-md text-on-surface font-semibold"
+                              >Jagatsinghpur</span
+                            >
+                            <span
+                              class="font-body-sm text-body-sm text-on-surface-variant"
+                              >Estuarine Surge Sensitivity</span
+                            >
+                          </div>
+                        </div>
+                        <span
+                          class="font-badge-mono text-badge-mono font-bold text-error bg-error-container/60 px-2 py-0.5 rounded"
+                          >91.8 RISK</span
+                        >
+                      </div>
+                      <div
+                        class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors"
+                      >
+                        <div class="flex items-center gap-space-sm">
+                          <span
+                            class="w-2.5 h-2.5 rounded-full bg-tertiary"
+                          ></span>
+                          <div class="flex flex-col">
+                            <span
+                              class="font-label-md text-label-md text-on-surface font-semibold"
+                              >Balasore</span
+                            >
+                            <span
+                              class="font-body-sm text-body-sm text-on-surface-variant"
+                              >Inter-tidal Flats Exposure</span
+                            >
+                          </div>
+                        </div>
+                        <span
+                          class="font-badge-mono text-badge-mono font-bold text-tertiary bg-tertiary-fixed/60 px-2 py-0.5 rounded"
+                          >87.5 RISK</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-sm text-label-sm text-on-surface-variant uppercase"
+                        >EWS Sensor Network</span
+                      >
+                      <span
+                        class="font-badge-mono text-badge-mono text-secondary font-bold"
+                        >99.4% UPTIME</span
+                      >
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 mt-1">
+                      <div
+                        class="p-2 rounded bg-surface-container-lowest flex flex-col"
+                      >
+                        <span
+                          class="font-badge-mono text-badge-mono text-outline"
+                          >Doppler Radars</span
+                        >
+                        <span
+                          class="font-headline-sm text-headline-sm text-on-surface font-bold"
+                          >3 / 3 Active</span
+                        >
+                      </div>
+                      <div
+                        class="p-2 rounded bg-surface-container-lowest flex flex-col"
+                      >
+                        <span
+                          class="font-badge-mono text-badge-mono text-outline"
+                          >Ocean Buoys</span
+                        >
+                        <span
+                          class="font-headline-sm text-headline-sm text-on-surface font-bold"
+                          >14 / 14 Sync</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-sm pt-space-xs">
+                    <button
+                      class="flex-1 py-2.5 px-space-md rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >broadcast_on_personal</span
+                      >
+                      <span>Trigger Siren Drill</span>
+                    </button>
+                    <button
+                      class="p-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors shadow-sm"
+                      title="Print District Summary"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >print</span
+                      >
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center gap-space-md"
+                >
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-[24px]"
+                      >verified_user</span
+                    >
+                  </div>
+                  <div class="flex flex-col min-w-0">
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Odisha Disaster Rapid Action Force (ODRAF)</span
+                    >
+                    <span
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                      >20 Battalions deployed with autonomous satellite
+                      transceiver links.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          (function () {
+            const searchInput = document.getElementById("stateSearchInput");
+            const hazardButtons = document.querySelectorAll(".hazard-filter");
+            const tierFilter = document.getElementById("tierFilter");
+            const rows = document.querySelectorAll(".state-row");
+
+            let activeHazard = "all";
+            let activeTier = "all";
+
+            function filterRows() {
+              const query = (searchInput.value || "").toLowerCase().trim();
+
+              rows.forEach((row) => {
+                const stateName =
+                  row
+                    .querySelector(".font-headline-sm")
+                    ?.textContent.toLowerCase() || "";
+                const stateDesc =
+                  row
+                    .querySelector(".font-label-sm")
+                    ?.textContent.toLowerCase() || "";
+                const threatText =
+                  row
+                    .querySelector(".font-label-md")
+                    ?.textContent.toLowerCase() || "";
+                const rowHazard = row.getAttribute("data-hazard");
+                const rowTier = row.getAttribute("data-tier");
+
+                const matchesSearch =
+                  !query ||
+                  stateName.includes(query) ||
+                  stateDesc.includes(query) ||
+                  threatText.includes(query);
+                const matchesHazard =
+                  activeHazard === "all" || rowHazard === activeHazard;
+                const matchesTier =
+                  activeTier === "all" || rowTier === activeTier;
+
+                if (matchesSearch && matchesHazard && matchesTier) {
+                  row.style.display = "";
+                } else {
+                  row.style.display = "none";
+                }
+              });
+            }
+
+            if (searchInput) {
+              searchInput.addEventListener("input", filterRows);
+            }
+
+            hazardButtons.forEach((btn) => {
+              btn.addEventListener("click", () => {
+                hazardButtons.forEach((b) => {
+                  b.classList.remove("bg-primary-fixed", "text-primary");
+                  b.classList.add("text-on-surface-variant");
+                });
+                btn.classList.remove("text-on-surface-variant");
+                btn.classList.add("bg-primary-fixed", "text-primary");
+
+                activeHazard = btn.getAttribute("data-hazard");
+                filterRows();
+              });
+            });
+
+            if (tierFilter) {
+              tierFilter.addEventListener("change", (e) => {
+                activeTier = e.target.value;
+                filterRows();
+              });
+            }
+
+            const stateProfiles = {
+              odisha: {
+                title: "Odisha Coastal Risk Profile",
+                subtitle: "Zone: North-West Bay of Bengal Cyclonic Flank",
+                score: "88.6",
+              },
+              bihar: {
+                title: "Bihar Riparian Basin Profile",
+                subtitle: "Zone: Gangetic Plain Transboundary Hydrology",
+                score: "86.2",
+              },
+              rajasthan: {
+                title: "Rajasthan Arid Thermal Profile",
+                subtitle: "Zone: Thar Sub-Desert & Severe Heatwave Belt",
+                score: "83.1",
+              },
+              kerala: {
+                title: "Kerala Western Ghats Profile",
+                subtitle: "Zone: High-Precipitation Orogenic Slope",
+                score: "79.4",
+              },
+              maharashtra: {
+                title: "Maharashtra Dual Vector Profile",
+                subtitle: "Zone: Megacity Surge & Marathwada Deficit",
+                score: "76.8",
+              },
+            };
+
+            rows.forEach((row) => {
+              row.addEventListener("click", () => {
+                rows.forEach((r) =>
+                  r.classList.remove("bg-surface-container-highest/70"),
+                );
+                row.classList.add("bg-surface-container-highest/70");
+
+                const stateKey = row.getAttribute("data-state");
+                const data = stateProfiles[stateKey];
+                if (data) {
+                  const inspectorTitle =
+                    document.getElementById("inspectorTitle");
+                  const inspectorSubtitle =
+                    document.getElementById("inspectorSubtitle");
+                  if (inspectorTitle) inspectorTitle.textContent = data.title;
+                  if (inspectorSubtitle)
+                    inspectorSubtitle.textContent = data.subtitle;
+                }
+              });
+            });
+          })();
+        </script>
+      </main>
+    </div>
+  </body>
+</html>
