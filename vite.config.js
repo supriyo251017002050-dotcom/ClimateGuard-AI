@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, loadEnv } from 'vite'
@@ -37,11 +38,11 @@ export default defineConfig({
         // v4 preserves source paths; retain Assets/... but remove the package prefix.
         rename: { stripBase: 4 },
       })),
-      {
+      ...(fs.existsSync('gods-eye-view/dist') ? [{
         src: 'gods-eye-view/dist/**/*',
         dest: 'gods-eye-view',
         rename: { stripBase: 2 },
-      },
+      }] : []),
     ] }),
   ],
 })
