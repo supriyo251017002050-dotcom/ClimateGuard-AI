@@ -2,6 +2,15 @@
 
 ClimateGuard AI is an India-focused climate-hazard education, live situational-awareness, and simulated disaster-response prototype. It combines static risk profiles with a Cesium globe, source-backed hazard feeds, preparedness guidance, and a clearly separated demonstration incident workflow.
 
+## 🌐 Live Deployments
+
+| Platform | Live Web Application | 3D Satellite Console | Status |
+| :--- | :--- | :--- | :--- |
+| **AWS Amplify** | [climateguard-ai.amplifyapp.com](https://main.d1f2ku79czevsh.amplifyapp.com) | [Satellite View](https://main.d1f2ku79czevsh.amplifyapp.com/gods-eye-view/) | [![AWS](https://img.shields.io/badge/AWS-Amplify-FF9900?logo=aws-amplify&logoColor=white)](https://main.d1f2ku79czevsh.amplifyapp.com) |
+| **Vercel** | [climateguard-ai.vercel.app](https://climateguard-ai-ten.vercel.app) | [Satellite View](https://climateguard-ai-ten.vercel.app/gods-eye-view/) | [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?logo=vercel&logoColor=white)](https://climateguard-ai-ten.vercel.app) |
+
+> Both production environments include automated SSL (HTTPS) and are accessible globally across mobile, tablet, and desktop devices.
+
 ## Start
 
 ```bash
