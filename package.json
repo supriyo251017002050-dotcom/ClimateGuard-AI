@@ -7,7 +7,7 @@
     "dev": "node scripts/dev-integrated.mjs",
     "dev:app": "vite",
     "dev:gods-eye": "npm --prefix gods-eye-view run dev",
-    "build": "vite build && npm --prefix gods-eye-view run build && node scripts/copy-gods-eye.mjs",
+    "build": "vite build",
     "test": "node --test server/*.test.js src/data/locationSelection.test.js",
     "verify:gods-eye": "node scripts/verify-gods-eye-embed.mjs",
     "lint": "oxlint",
