@@ -40,3 +40,6 @@ tmp_*.html
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
+.env*
